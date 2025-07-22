@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import BackgroundCanvas from '@/components/threejs/BackgroundCanvas';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +12,95 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+// Crit font family configuration
+const critFont = localFont({
+  src: [
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Extralight-Trial.otf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Light-Trial.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Regular-Trial.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Medium-Trial.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Semibold-Trial.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Bold-Trial.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Extrabold-Trial.otf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Black-Trial.otf",
+      weight: "900",
+      style: "normal",
+    },
+    // Italic variants
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Extralight-Italic-Trial.otf",
+      weight: "200",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Light-Italic-Trial.otf",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Italic-Trial.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Medium-Italic-Trial.otf",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Semibold-Italic-Trial.otf",
+      weight: "600",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Bold-Italic-Trial.otf",
+      weight: "700",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Extrabold-Italic-Trial.otf",
+      weight: "800",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/crit-font-family/Crit-Black-Italic-Trial.otf",
+      weight: "900",
+      style: "italic",
+    },
+  ],
+  variable: "--font-crit",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,8 +116,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${critFont.variable} antialiased`}
       >
+        <BackgroundCanvas />
         {children}
       </body>
     </html>
