@@ -50,7 +50,7 @@ export default function ProjectTile({
                     <span id={`${projectName}_Name`} className="font-crit font-regular text-s mb-2">{projectName}</span>
                     <span id={`${projectName}_ShortDescription`} className="font-crit font-light italic text-xs mb-4">{shortDescription}</span>
                     <span id={`${projectName}_LongDescription`} className="font-crit font-light text-xs mb-4 text-justify">{longDescription}</span>
-                    <div id={`${projectName}_DemoVideo`} className="p-4 border border-gray-400 mb-4">
+                    <div id={`${projectName}_DemoVideo`} className="p-4 border border-gray-400 mb-4 flex items-center justify-center">
                         {videoLink && (
                             <video 
                                 src={videoLink} 
@@ -58,7 +58,7 @@ export default function ProjectTile({
                                 loop 
                                 muted 
                                 playsInline
-                                className="w-full h-48 object-cover rounded"
+                                className="border border-gray-400"
                             />
                         )}
                     </div>
@@ -85,16 +85,16 @@ export default function ProjectTile({
     // Desktop layout (≥ 900px)
     return (
         <div id={`${projectName}_Tile`} className="flex flex-row" style={{width: '80vw', minWidth: '600px'}}>
-            <div id={`${projectName}_Information`} className="grid grid-cols-3 grid-rows-3 bg-white p-6 flex-grow hover:opacity-75" 
+            <div id={`${projectName}_Information`} className="grid grid-cols-3 bg-white p-6 flex-grow hover:opacity-75" 
                 style={{ 
-                    gridTemplateRows: 'auto auto auto',
+                    gridTemplateRows: 'auto auto 1fr',
                     gridTemplateColumns: '250px 24px 1fr',
                 }}
                 onClick={() => projectPage && handleNavigation(projectPage)}>
                 <span id={`${projectName}_Name`} className="col-span-1 font-crit font-regular text-s">{projectName}</span>
                 <span id={`${projectName}_ShortDescription`} className="col-start-1 row-start-2 font-crit font-light italic text-xs">{shortDescription}</span>
                 <span id={`${projectName}_LongDescription`} className="col-start-1 row-start-3 font-crit font-light text-xs pt-4 text-justify">{longDescription}</span>
-                <div id={`${projectName}_DemoVideo`} className="col-start-3 row-start-1 row-span-full p-4 border border-gray-400">
+                <div id={`${projectName}_DemoVideo`} className="col-start-3 row-start-1 row-span-full p-4 border border-gray-400 flex items-center justify-center">
                     {videoLink && (
                         <video 
                             src={videoLink} 
@@ -102,7 +102,7 @@ export default function ProjectTile({
                             loop 
                             muted 
                             playsInline
-                            className="w-full h-full object-cover rounded"
+                            className="border border-gray-400"
                         />
                     )}
                 </div>

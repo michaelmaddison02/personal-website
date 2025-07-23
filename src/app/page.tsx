@@ -15,7 +15,7 @@ export default function Home() {
           <Image src="/aligator.svg" alt="External link" width={500} height={500} className="ml-1" />
           <div className="flex flex-row justify-between">
             <span className="text-3xl font-crit font-bold pl-5">MICHAEL</span>
-            <span className="text-3xl font-crit font-bold md:pl-1">∙</span>
+            <span className="text-3xl font-crit font-bold md:pl-2">∙</span>
             <span className="text-3xl font-crit font-bold pr-3">MADDISON</span>
           </div>
         </div>      

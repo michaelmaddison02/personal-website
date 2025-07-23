@@ -14,7 +14,7 @@ export default function Page() {
                     shortDescription="Full-stack Creative Coding Project"
                     longDescription="A creative text styling application that analyzes the emotional content of text and applies dynamic, emotion-based styling to individual words. Inspired by the whimsical world of Geronimo Stilton, this app transforms plain text into visually expressive content by detecting emotions and applying appropriate colors and fonts."
                     githubLink="https://github.com/michaelmaddison02/geronimo-stilton"                
-                    // videoLink="/videos/geronimo-stilton-demo.mp4"
+                    videoLink="/videos/geronimo-stilton-project-tile-demo.mov"
                     projectPage="/projects/geronimo-stilton"
                 />
                 <ProjectTile 
