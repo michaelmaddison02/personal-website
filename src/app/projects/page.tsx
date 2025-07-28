@@ -36,25 +36,6 @@ export default function Page() {
         <div className="min-h-screen flex flex-col p-4">
             <SiteHeaderNav />
             
-            <div id="projectTileList" className="flex flex-col gap-5 items-end max-[700px]:items-center">
-                {projects.map((project, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: 100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{
-                            opacity: { duration: 0.4, delay: index * 0.2 },
-                            x: { duration: 0.4, delay: index * 0.2, type: "spring", bounce: 0.2 }
-                        }}
-                        whileHover={{ 
-                            scale: 1.05,
-                            transition: { duration: 0.15, type: "tween" }
-                        }}
-                    >
-                        <ProjectTile {...project} />
-                    </motion.div>
-                ))}
-            </div>
         </div>
     );
   }
