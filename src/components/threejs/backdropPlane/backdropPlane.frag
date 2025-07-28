@@ -1,81 +1,7 @@
 uniform vec3 iResolution;
 uniform float iTime;
+uniform float uScrollOffset;
 varying vec2 vUv;
-
-// // === Editable parameters ===
-// const float ellipse_center_x = 0.0;        // Center of ellipse, as fraction of width (0 = left edge)
-// const float ellipse_center_y = 0.5/3.0;    // Center of ellipse, as fraction of height
-
-// const float ellipse_radius_x = 0.2;      // Ellipse radius as fraction of width (1/5)
-// const float ellipse_radius_y = 0.5;     // Ellipse radius as fraction of height
-// const float ellipse_softness = 0.3;     // Soft edge for ellipse
-
-// const float line_leg_x = 0.35;             // Horizontal leg length as fraction of width (from right edge)
-// const float line_leg_y = 0.6;             // Vertical leg length as fraction of height (from top edge)
-// const float line_softness = 0.3;          // Soft edge for line mask
-
-// vec3 gradient(float x) {
-//     // Linear gradient from #56e2e1 to #58e5be
-//     vec3 left = vec3(0x56, 0xe2, 0xe1) / 255.0;
-//     vec3 right = vec3(0x58, 0xe5, 0xbe) / 255.0;
-//     return mix(left, right, x);
-// }
-
-// float rand(vec2 co){
-//     return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
-// }
-
-// // Returns 1.0 inside the ellipse (cutout), 0.0 outside, with soft edge
-// float ellipseMask(vec2 uv) {
-//     float cx = ellipse_center_x; // center x (from left)
-//     float cy = ellipse_center_y; // center y (from top)
-//     // if (uv.x > cx) return 0.0;
-//     float nx = (uv.x - cx) / ellipse_radius_x;
-//     float ny = (uv.y - cy) / ellipse_radius_y;
-//     float dist = sqrt(nx*nx + ny*ny);
-//     float edge = 1.0 - smoothstep(1.0 - ellipse_softness, 1.0 + ellipse_softness, dist);
-//     return edge;
-// }
-
-// // Returns 1.0 inside the line (cutout), 0.0 outside, with soft edge
-// float lineMask(vec2 uv) {
-//     float slope = line_leg_y / line_leg_x;
-//     float left = 1.0 - line_leg_x;
-//     // Inverted smoothstep: white on the right of the line, soft transition
-//     float d = uv.y - slope * (uv.x - left);
-//     float mask = 1.0 - smoothstep(0.0, line_softness, d);
-//     return mask;
-// }
-
-// void main() {
-//     vec2 uv = vUv;
-
-//     // Calculate masks (1.0 = inside cutout, 0.0 = outside)
-//     float ellipse = ellipseMask(uv);
-//     float line = lineMask(uv);
-
-//     // The "cutout" is where either mask is > 0
-//     float cutout = max(ellipse, line);
-
-//     // Grain background (flat color + grain)
-//     float grainScale = 600.0; // or your preferred scale
-//     vec2 grainUV = floor(uv * grainScale) / grainScale;
-//     float grain = rand(grainUV * grainScale);
-//     float grainStrength = 0.15;
-
-//     vec3 backgroundColor = vec3(0.9); // flat background
-//     float safeGrainX = clamp(grainUV.x, 0.0, 1.0);
-//     vec3 grainColor = gradient(safeGrainX);
-
-//     // Only show the gradient in the grains, not the background
-//     vec3 color = mix(backgroundColor, grainColor, (grain - 0.5) * 2.0 * grainStrength + 0.5);
-
-//     // Mix with white in the cutout area (keep your existing logic)
-//     color = mix(color, vec3(1.0), cutout);
-
-//     gl_FragColor = vec4(color, 1.0);
-// }
-
 const float filmGrainIntensity = 0.08;
 
 mat2 Rot(float a) {
@@ -110,8 +36,9 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord) {
     vec2 uv = fragCoord / iResolution.xy;
     float aspectRatio = iResolution.x / iResolution.y;
     
-    // Transformed uv
+    // Transformed uv with parallax offset
     vec2 tuv = uv - .5;
+    tuv.y += uScrollOffset;
 
     // Rotate with noise
     float degree = noise(vec2(iTime*.05, tuv.x*tuv.y));

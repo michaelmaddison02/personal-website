@@ -12,18 +12,24 @@ type Uniforms = {
     uTime: number
     iTime: number
     iResolution: [number, number, number]
+    uScrollOffset: number
 }
 
 const INITIAL_UNIFORMS: Uniforms = {
     uTime: 0,
     iTime: 0,
     iResolution: [1, 1, 1],
+    uScrollOffset: 0,
 }
 
 const CustomShaderMaterial = shaderMaterial(INITIAL_UNIFORMS, vertexShader, fragmentShader)
 const BackdropPlaneShaderMaterial = extend(CustomShaderMaterial)
 
-const BackdropPlane = () => {
+type Props = {
+    scrollOffset: number
+}
+
+const BackdropPlane: FC<Props> = ({ scrollOffset }) => {
     const { viewport } = useThree()
     const shader = useRef<typeof BackdropPlaneShaderMaterial & Uniforms>(null)
 
@@ -33,6 +39,7 @@ const BackdropPlane = () => {
         shader.current.uTime = time
         shader.current.iTime = time
         shader.current.iResolution = [viewport.width, viewport.height, 1]
+        shader.current.uScrollOffset = scrollOffset * 0.001
     })
 
     return (
@@ -44,6 +51,7 @@ const BackdropPlane = () => {
             uTime={0}
             iTime={0}
             iResolution={[1, 1, 1]}
+            uScrollOffset={0}
         />
         </Plane>
     )

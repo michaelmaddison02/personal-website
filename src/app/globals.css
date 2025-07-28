@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
+/* Debug: Check if CSS variables are working */
+.font-squidboy {
+  font-family: var(--font-squidboy);
+}
+
+.font-stamp-one {
+  font-family: var(--font-stamp-one);
+}
+
+.font-stamp-two {
+  font-family: var(--font-stamp-two);
+}
+
+.font-stamp-three {
+  font-family: var(--font-stamp-three);
+}
+
+.font-stamp-smudge {
+  font-family: var(--font-stamp-smudge);
+}
+
 body {
   overscroll-behavior: none;
 }
