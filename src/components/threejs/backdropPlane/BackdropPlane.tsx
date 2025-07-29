@@ -13,6 +13,7 @@ type Uniforms = {
     iTime: number
     iResolution: [number, number, number]
     uScrollOffset: number
+    uPageTransition: number
 }
 
 const INITIAL_UNIFORMS: Uniforms = {
@@ -20,6 +21,7 @@ const INITIAL_UNIFORMS: Uniforms = {
     iTime: 0,
     iResolution: [1, 1, 1],
     uScrollOffset: 0,
+    uPageTransition: 0,
 }
 
 const CustomShaderMaterial = shaderMaterial(INITIAL_UNIFORMS, vertexShader, fragmentShader)
@@ -27,11 +29,13 @@ const BackdropPlaneShaderMaterial = extend(CustomShaderMaterial)
 
 type Props = {
     scrollOffset: number
+    isProjectsPage: boolean
 }
 
-const BackdropPlane: FC<Props> = ({ scrollOffset }) => {
+const BackdropPlane: FC<Props> = ({ scrollOffset, isProjectsPage }) => {
     const { viewport } = useThree()
     const shader = useRef<typeof BackdropPlaneShaderMaterial & Uniforms>(null)
+    const transitionRef = useRef(isProjectsPage ? 1.0 : 0.0)
 
     useFrame(({ clock }) => {
         if (!shader.current) return
@@ -40,6 +44,11 @@ const BackdropPlane: FC<Props> = ({ scrollOffset }) => {
         shader.current.iTime = time
         shader.current.iResolution = [viewport.width, viewport.height, 1]
         shader.current.uScrollOffset = scrollOffset * 0.001
+        
+        // Smooth transition between pages
+        const targetValue = isProjectsPage ? 1.0 : 0.0
+        transitionRef.current += (targetValue - transitionRef.current) * 0.03
+        shader.current.uPageTransition = transitionRef.current
     })
 
     return (
@@ -52,6 +61,7 @@ const BackdropPlane: FC<Props> = ({ scrollOffset }) => {
             iTime={0}
             iResolution={[1, 1, 1]}
             uScrollOffset={0}
+            uPageTransition={0}
         />
         </Plane>
     )

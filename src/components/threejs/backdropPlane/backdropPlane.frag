@@ -1,6 +1,7 @@
 uniform vec3 iResolution;
 uniform float iTime;
 uniform float uScrollOffset;
+uniform float uPageTransition;
 varying vec2 vUv;
 const float filmGrainIntensity = 0.08;
 
@@ -54,25 +55,45 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord) {
     tuv.x += sin(tuv.y*frequency+speed)/amplitude;
     tuv.y += sin(tuv.x*frequency*1.5+speed)/(amplitude*.5);
     
-    // Light gradient colors
+    // Home page colors
     vec3 lightTan = vec3(245, 222, 179) / vec3(255);
     vec3 peachOrange = vec3(255, 165, 100) / vec3(255);
     vec3 softWhite = vec3(255, 250, 240) / vec3(255);
     vec3 warmOrange = vec3(255, 140, 80) / vec3(255);
-    
-    // Dark gradient colors
     vec3 deepRed = vec3(193, 43, 21) / vec3(255);
     vec3 darkTan = vec3(139, 115, 85) / vec3(255);
     vec3 burnedOrange = vec3(204, 85, 40) / vec3(255);
     vec3 richTan = vec3(210, 180, 140) / vec3(255);
     
+    // Projects page colors (blacks, grays, whites)
+    vec3 white = vec3(1.0);
+    vec3 lightGray = vec3(0.4);
+    vec3 medGray = vec3(0.25);
+    vec3 darkGray = vec3(0.15);
+    vec3 charcoal = vec3(0.08);
+    vec3 black = vec3(0.0);
+    
     // Interpolate between light and dark gradient
     float cycle = sin(iTime * 0.5);
     float t = (sign(cycle) * pow(abs(cycle), 0.6) + 1.) / 2.;
-    vec3 color1 = mix(lightTan, deepRed, t);
-    vec3 color2 = mix(peachOrange, darkTan, t);
-    vec3 color3 = mix(softWhite, burnedOrange, t);
-    vec3 color4 = mix(warmOrange, richTan, t);
+    
+    // Home page colors
+    vec3 homeColor1 = mix(lightTan, deepRed, t);
+    vec3 homeColor2 = mix(peachOrange, darkTan, t);
+    vec3 homeColor3 = mix(softWhite, burnedOrange, t);
+    vec3 homeColor4 = mix(warmOrange, richTan, t);
+    
+    // Projects page colors
+    vec3 projColor1 = mix(medGray, charcoal, t);
+    vec3 projColor2 = mix(darkGray, black, t);
+    vec3 projColor3 = mix(medGray, darkGray, t);
+    vec3 projColor4 = mix(darkGray, medGray, t);
+    
+    // Smooth transition between page color schemes
+    vec3 color1 = mix(homeColor1, projColor1, uPageTransition);
+    vec3 color2 = mix(homeColor2, projColor2, uPageTransition);
+    vec3 color3 = mix(homeColor3, projColor3, uPageTransition);
+    vec3 color4 = mix(homeColor4, projColor4, uPageTransition);
 
     // Blend the gradient colors and apply transformations
     vec3 layer1 = mix(color3, color2, smoothstep(-.3, .2, (tuv*Rot(radians(-5.))).x));

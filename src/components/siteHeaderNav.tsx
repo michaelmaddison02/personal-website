@@ -12,22 +12,22 @@ export default function siteHeaderNav() {
     return (
         <div id="siteHeader" className="flex flex-row justify-end gap-3 pb-4">
             <button 
-                className="font-crit italic hover:opacity-70 transition-opacity"
+                className="font-stamp-three text-lg text-[#FFFFF0] hover:opacity-70 transition-opacity"
                 onClick={() => handleNavigation('/')}
             >
-                home
+                HOME
             </button>
             <button 
-                className="font-crit italic hover:opacity-70 transition-opacity"
+                className="font-stamp-three text-lg hover:opacity-70 transition-opacity"
                 onClick={() => handleNavigation('/projects')}
             >
-                projects
+                PROJECTS
             </button>
             <button 
-                className="font-crit italic hover:opacity-70 transition-opacity"
+                className="font-stamp-three text-[#FFFAF0] text-lg hover:opacity-70 transition-opacity"
                 onClick={() => handleNavigation('/info')}
             >
-                info
+                INFO
             </button>
         </div>
     );

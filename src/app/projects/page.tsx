@@ -2,11 +2,74 @@
 
 import SiteHeaderNav from "../../components/siteHeaderNav"
 import ProjectTile from "../../components/ProjectTile"
-import BackgroundCanvas from '@/components/threejs/BackgroundCanvas';
 import Image from 'next/image';
-import { motion } from "motion/react"
+import { motion, useScroll, useTransform } from "motion/react"
+
+import React from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import GLBModel from '../../components/threejs/GLBModel';
 
 export default function Page() {
+    const [currentIndex, setCurrentIndex] = React.useState(0);
+    const [windowWidth, setWindowWidth] = React.useState(0);
+    const scrollContainerRef = React.useRef(null);
+    const totalItems = 4; // We have 3 canvas items
+    
+    const scrollToIndex = (index) => {
+        if (scrollContainerRef.current) {
+            const scrollWidth = scrollContainerRef.current.scrollWidth;
+            const containerWidth = scrollContainerRef.current.clientWidth;
+            const scrollPosition = (scrollWidth / totalItems) * index;
+            scrollContainerRef.current.scrollTo({
+                left: scrollPosition,
+                behavior: 'smooth'
+            });
+            setCurrentIndex(index);
+        }
+    };
+    
+    const handlePrevious = () => {
+        if (currentIndex > 0) {
+            scrollToIndex(currentIndex - 1);
+        }
+    };
+    
+    const handleNext = () => {
+        if (currentIndex < totalItems - 1) {
+            scrollToIndex(currentIndex + 1);
+        }
+    };
+    
+    React.useEffect(() => {
+        const handleScroll = () => {
+            if (scrollContainerRef.current) {
+                const scrollLeft = scrollContainerRef.current.scrollLeft;
+                const containerWidth = scrollContainerRef.current.clientWidth;
+                const newIndex = Math.round(scrollLeft / containerWidth);
+                setCurrentIndex(newIndex);
+            }
+        };
+        
+        const scrollContainer = scrollContainerRef.current;
+        if (scrollContainer) {
+            scrollContainer.addEventListener('scroll', handleScroll);
+            return () => scrollContainer.removeEventListener('scroll', handleScroll);
+        }
+    }, []);
+
+    React.useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        
+        // Set initial width
+        setWindowWidth(window.innerWidth);
+        
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+    
     const projects = [
         {
             projectName: "GERONIMO STILTON",
@@ -33,9 +96,101 @@ export default function Page() {
     ];
 
     return (
-        <div className="min-h-screen flex flex-col p-4">
-            <SiteHeaderNav />
+        <div className="h-screen flex flex-col p-4 relative">
+                <SiteHeaderNav />
             
+            {/* Previous Arrow */}
+            {currentIndex > 0 && (
+                <button 
+                    onClick={handlePrevious}
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 p-3 transition-all duration-200 hover:opacity-80"
+                >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                </button>
+            )}
+            
+            {/* Next Arrow */}
+            {currentIndex < totalItems - 1 && (
+                <button 
+                    onClick={handleNext}
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 p-3 transition-all duration-200 hover:opacity-80"
+                >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                </button>
+            )}
+            
+            <div 
+                ref={scrollContainerRef}
+                className="overflow-x-scroll flex-1 snap-x snap-mandatory" 
+                style={{scrollbarWidth: 'none', msOverflowStyle: 'none', scrollBehavior: 'smooth'}}
+            >
+                <div className="flex h-full">
+                    <div className="w-full h-full flex justify-center items-center flex-shrink-0 snap-start">
+                        <div className="max-w-[475px] w-full h-full">
+                            <Canvas camera={{ position: [0, 14, 0], fov: 90 }}>
+                                <OrbitControls 
+                                    enableZoom={false} 
+                                    enablePan={false} 
+                                    enableRotate={false}
+                                    target={[0, 0, 0]}
+                                />
+                                <ambientLight intensity={0.6} />
+                                <directionalLight position={[5, 5, 5]} intensity={0.8} />
+                                <GLBModel modelPath="/images/geronimo_stilton_poster.glb" />
+                            </Canvas>
+                        </div>
+                    </div>
+                    <div className="w-screen h-full flex justify-center items-center flex-shrink-0 snap-start">
+                        <div className="max-w-[800px] w-full h-full">
+                            <Canvas camera={{ position: [0, 14, 0], fov: 90 }}>
+                                <OrbitControls 
+                                    enableZoom={false} 
+                                    enablePan={false} 
+                                    enableRotate={false}
+                                    target={[0, 0, 0]}
+                                />
+                                <ambientLight intensity={0.6} />
+                                <directionalLight position={[5, 5, 5]} intensity={1.8} />
+                                <GLBModel modelPath="/images/pulseLink_poster.glb" />
+                            </Canvas>
+                        </div>
+                    </div>
+                    <div className="w-screen h-full flex justify-center items-center flex-shrink-0 snap-start">
+                        <div className="max-w-[800px] w-full h-full">
+                            <Canvas camera={{ position: [0, 14, 0], fov: 90 }}>
+                                <OrbitControls 
+                                    enableZoom={false} 
+                                    enablePan={false} 
+                                    enableRotate={false}
+                                    target={[0, 0, 0]}
+                                />
+                                <ambientLight intensity={0.6} />
+                                <directionalLight position={[5, 5, 5]} intensity={1.8} />
+                                <GLBModel modelPath="/images/anthem_poster.glb" />
+                            </Canvas>
+                        </div>
+                    </div>
+                    <div className="w-screen h-full flex justify-center items-center flex-shrink-0 snap-start">
+                        <div className="max-w-[800px] w-full h-full">
+                            <Canvas camera={{ position: [0, 14, 0], fov: 90 }}>
+                                <OrbitControls 
+                                    enableZoom={false} 
+                                    enablePan={false} 
+                                    enableRotate={false}
+                                    target={[0, 0, 0]}
+                                />
+                                <ambientLight intensity={0.6} />
+                                <directionalLight position={[5, 5, 5]} intensity={0.8} />
+                                <GLBModel modelPath="/images/voxcura_poster.glb" />
+                            </Canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
-  }
+}
