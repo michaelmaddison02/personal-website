@@ -9,12 +9,14 @@ interface GLBModelProps {
     modelPath: string;
     rotation?: [number, number, number];
     position?: [number, number, number];
+    onHoverChange?: (isHovered: boolean) => void;
 }
 
 export default function GLBModel({ 
     modelPath, 
     rotation = [0, -Math.PI / 2, 0], 
-    position = [0.9, 0, -7] 
+    position = [0.9, 0, -7],
+    onHoverChange
 }: GLBModelProps) {
     const gltf = useLoader(GLTFLoader, modelPath);
     const meshRef = React.useRef<THREE.Group>(null);
@@ -38,8 +40,14 @@ export default function GLBModel({
             ref={meshRef}
             rotation={rotation} 
             position={position}
-            onPointerEnter={() => setIsHovered(true)}
-            onPointerLeave={() => setIsHovered(false)}
+            onPointerEnter={() => {
+                setIsHovered(true);
+                onHoverChange?.(true);
+            }}
+            onPointerLeave={() => {
+                setIsHovered(false);
+                onHoverChange?.(false);
+            }}
         >
             <primitive object={gltf.scene.clone()} scale={1} />
         </group>

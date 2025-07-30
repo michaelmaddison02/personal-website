@@ -1,14 +1,14 @@
 "use client"
-
 import SiteHeaderNav from "../../components/siteHeaderNav"
 import ProjectTile from "../../components/ProjectTile"
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from "motion/react"
 
 import React from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import GLBModel from '../../components/threejs/GLBModel';
+import GeronimoPoster from '../../components/projects/GeronimoPoster';
+import PulseLinkPoster from '../../components/projects/PulseLinkPoster';
+import AnthemPoster from '../../components/projects/AnthemPoster';
+import VoxcuraPoster from '../../components/projects/VoxcuraPoster';
 
 export default function Page() {
     const [currentIndex, setCurrentIndex] = React.useState(0);
@@ -97,7 +97,7 @@ export default function Page() {
 
     return (
         <div className="h-screen flex flex-col p-4 relative">
-                <SiteHeaderNav />
+            <SiteHeaderNav />
             
             {/* Previous Arrow */}
             {currentIndex > 0 && (
@@ -129,66 +129,10 @@ export default function Page() {
                 style={{scrollbarWidth: 'none', msOverflowStyle: 'none', scrollBehavior: 'smooth'}}
             >
                 <div className="flex h-full">
-                    <div className="w-full h-full flex justify-center items-center flex-shrink-0 snap-start">
-                        <div className="max-w-[475px] w-full h-full">
-                            <Canvas camera={{ position: [0, 14, 0], fov: 90 }}>
-                                <OrbitControls 
-                                    enableZoom={false} 
-                                    enablePan={false} 
-                                    enableRotate={false}
-                                    target={[0, 0, 0]}
-                                />
-                                <ambientLight intensity={0.6} />
-                                <directionalLight position={[5, 5, 5]} intensity={0.8} />
-                                <GLBModel modelPath="/images/geronimo_stilton_poster.glb" />
-                            </Canvas>
-                        </div>
-                    </div>
-                    <div className="w-screen h-full flex justify-center items-center flex-shrink-0 snap-start">
-                        <div className="max-w-[800px] w-full h-full">
-                            <Canvas camera={{ position: [0, 14, 0], fov: 90 }}>
-                                <OrbitControls 
-                                    enableZoom={false} 
-                                    enablePan={false} 
-                                    enableRotate={false}
-                                    target={[0, 0, 0]}
-                                />
-                                <ambientLight intensity={0.6} />
-                                <directionalLight position={[5, 5, 5]} intensity={1.8} />
-                                <GLBModel modelPath="/images/pulseLink_poster.glb" />
-                            </Canvas>
-                        </div>
-                    </div>
-                    <div className="w-screen h-full flex justify-center items-center flex-shrink-0 snap-start">
-                        <div className="max-w-[800px] w-full h-full">
-                            <Canvas camera={{ position: [0, 14, 0], fov: 90 }}>
-                                <OrbitControls 
-                                    enableZoom={false} 
-                                    enablePan={false} 
-                                    enableRotate={false}
-                                    target={[0, 0, 0]}
-                                />
-                                <ambientLight intensity={0.6} />
-                                <directionalLight position={[5, 5, 5]} intensity={1.8} />
-                                <GLBModel modelPath="/images/anthem_poster.glb" />
-                            </Canvas>
-                        </div>
-                    </div>
-                    <div className="w-screen h-full flex justify-center items-center flex-shrink-0 snap-start">
-                        <div className="max-w-[800px] w-full h-full">
-                            <Canvas camera={{ position: [0, 14, 0], fov: 90 }}>
-                                <OrbitControls 
-                                    enableZoom={false} 
-                                    enablePan={false} 
-                                    enableRotate={false}
-                                    target={[0, 0, 0]}
-                                />
-                                <ambientLight intensity={0.6} />
-                                <directionalLight position={[5, 5, 5]} intensity={0.8} />
-                                <GLBModel modelPath="/images/voxcura_poster.glb" />
-                            </Canvas>
-                        </div>
-                    </div>
+                    <GeronimoPoster windowWidth={windowWidth} />
+                    <PulseLinkPoster windowWidth={windowWidth} />
+                    <AnthemPoster windowWidth={windowWidth} />
+                    <VoxcuraPoster windowWidth={windowWidth} />
                 </div>
             </div>
         </div>
