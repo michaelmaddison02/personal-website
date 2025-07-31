@@ -4,6 +4,7 @@ import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { motion } from 'motion/react';
+import { useRouter } from 'next/navigation';
 import GLBModel from '../threejs/GLBModel';
 import Card from '../Card';
 
@@ -13,6 +14,11 @@ interface GeronimoPosterProps {
 
 export default function GeronimoPoster({ windowWidth }: GeronimoPosterProps) {
     const [isHovered, setIsHovered] = React.useState(false);
+    const router = useRouter();
+
+    const handleModelClick = () => {
+        router.push('/projects/geronimo-stilton');
+    };
 
     return (
         <div className="w-full h-full flex justify-center items-center flex-shrink-0 snap-start">
@@ -29,6 +35,7 @@ export default function GeronimoPoster({ windowWidth }: GeronimoPosterProps) {
                     <GLBModel 
                         modelPath="/images/geronimo_stilton_poster.glb" 
                         onHoverChange={setIsHovered}
+                        onClick={handleModelClick}
                     />
                 </Canvas>
                 
@@ -58,7 +65,7 @@ export default function GeronimoPoster({ windowWidth }: GeronimoPosterProps) {
                     </Card>
                 </motion.div>
 
-                <motion.div
+                {/* <motion.div
                     className="absolute top-1/2 -translate-y-1/2 -left-20 z-10"
                     initial={{ x: 0, opacity: 0 }}
                     animate={{
@@ -80,13 +87,13 @@ export default function GeronimoPoster({ windowWidth }: GeronimoPosterProps) {
                             </svg>
                         </a>
                     </Card>
-                </motion.div>
+                </motion.div> */}
                 
                 <motion.div
                     className="absolute top-3/4 -translate-y-1/2 -right-16 z-10"
                     initial={{ x: 0, opacity: 0 }}
                     animate={{
-                        x: isHovered ? 100 : 0,
+                        x: isHovered ? 105 : 0,
                         opacity: isHovered ? 1 : 0
                     }}
                     transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
