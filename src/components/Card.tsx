@@ -27,7 +27,7 @@ export default function Card({ color = 'customgray', children }: CardProps) {
             style={{ borderColor: hexColor }}
         >
             <div 
-                className="p-3 rounded-lg"
+                className="p-3 rounded-lg h-full"
                 style={{ 
                     backgroundColor: backgroundColorWithOpacity,
                     color: hexColor 

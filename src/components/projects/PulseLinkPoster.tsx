@@ -4,6 +4,7 @@ import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { motion } from 'motion/react';
+import { useRouter } from 'next/navigation';
 import GLBModel from '../threejs/GLBModel';
 import Card from '../Card';
 
@@ -13,6 +14,11 @@ interface PulseLinkPosterProps {
 
 export default function PulseLinkPoster({ windowWidth }: PulseLinkPosterProps) {
     const [isHovered, setIsHovered] = React.useState(false);
+    const router = useRouter();
+
+    const handleModelClick = () => {
+        router.push('/projects/pulselink');
+    };
 
     return (
         <div className="w-screen h-full flex justify-center items-center flex-shrink-0 snap-start">
@@ -29,12 +35,13 @@ export default function PulseLinkPoster({ windowWidth }: PulseLinkPosterProps) {
                     <GLBModel 
                         modelPath="/images/pulseLink_poster.glb" 
                         onHoverChange={setIsHovered}
+                        onClick={handleModelClick}
                     />
                 </Canvas>
                 
                 {/* Animated Cards */}
                 
-                <motion.div
+                {/* <motion.div
                     className="absolute top-1/2 -translate-y-1/2 -left-16 z-10"
                     initial={{ x: 0, opacity: 0 }}
                     animate={{
@@ -56,7 +63,7 @@ export default function PulseLinkPoster({ windowWidth }: PulseLinkPosterProps) {
                             </svg>
                         </a>
                     </Card>
-                </motion.div>
+                </motion.div> */}
 
                 <motion.div
                     className="absolute top-3/4 -translate-y-1/2 -left-20 z-10"

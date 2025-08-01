@@ -37,9 +37,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord) {
     vec2 uv = fragCoord / iResolution.xy;
     float aspectRatio = iResolution.x / iResolution.y;
     
-    // Transformed uv with parallax offset
     vec2 tuv = uv - .5;
-    tuv.y += uScrollOffset;
 
     // Rotate with noise
     float degree = noise(vec2(iTime*.05, tuv.x*tuv.y));

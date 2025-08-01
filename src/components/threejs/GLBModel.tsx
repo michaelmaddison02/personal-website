@@ -24,6 +24,14 @@ export default function GLBModel({
     const meshRef = React.useRef<THREE.Group>(null);
     const [isHovered, setIsHovered] = React.useState(false);
     
+    React.useEffect(() => {
+        return () => {
+            if (onClick) {
+                document.body.style.cursor = 'default';
+            }
+        };
+    }, [onClick]);
+    
     useFrame(() => {
         if (meshRef.current) {
             const targetScale = isHovered ? 1.1 : 1;
