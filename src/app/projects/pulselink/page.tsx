@@ -14,7 +14,7 @@ export default function Page() {
     return (
         
         <div className="min-h-screen min-w-screen flex flex-col gap-3">
-            <div id="hero-section" className="h-[250px] w-full relative rounded-3xl overflow-hidden">
+            <div id="hero-section" className="h-[250px] w-full relative rounded-3xl overflow-hidden border-customblue border-2">
                 <Image src={'/images/pulselink/music_festival_crowd.jpg'} alt="crowd of people" fill className="object-cover opacity-50"/>
                 <button 
                     onClick={() => router.back()}
@@ -22,14 +22,15 @@ export default function Page() {
                 >
                     <BackArrowIcon className="w-5 h-5" />
                 </button>
-                <div className="absolute bottom-6 left-6 font-crit font-bold text-white opacity-80 text-3xl md:text-5xl">
-                    PULSELINK
+                <div className="absolute bottom-4 left-6 font-crit font-bold text-white opacity-80">
+                    <div className="text-3xl md:text-3xl">PULSELINK</div>
+                    <div className="text-s font-light italic">Indoor Friend-Finding Wearable Device Prototype</div>
                 </div>
                 <a 
                     href="https://github.com/NPande25/PulseLink" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="absolute bottom-6 right-6 font-crit font-bold text-white opacity-80 hover:text-gray-300 transition-colors flex items-center gap-2"
+                    className="absolute bottom-4 right-6 font-crit text-sm italic text-white opacity-80 hover:text-gray-300 transition-colors flex items-center gap-2"
                 >
                     GitHub
                     <ExternalLinkIcon className="w-5 h-5" />
@@ -59,8 +60,36 @@ export default function Page() {
                             </div>
                         </Card>
                     </div>
-                    
-                    
+                </div>
+            </div>
+            {/* <div className="flex flex-row gap-4 justify-center overflow-hidden">
+                <video 
+                    src="/videos/geronimo-stilton-changing-default-text.mov"
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="w-[450px] object-contain border-customorange opacity-90 border-2 rounded-lg"
+                />
+                <video 
+                    src="/videos/geronimo-stilton-restyling.mov"
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="w-[450px] object-contain border-customorange opacity-90 border-2 rounded-lg"
+                />
+                <video 
+                    src="/videos/geronimo-stilton-click-restyling.mov"
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="w-[450px] object-contain border-customorange opacity-90 border-2 rounded-lg"
+                />
+            </div> */}
+            <div id="siteBody" className="flex flex-col items-center gap-3 px-4">
+                <div className="flex flex-col w-full max-w-[650px] gap-3">
                     <Card color="customblue">
                         <div className="flex flex-col gap-8 w-full p-4">                        
                             <div id="project-description" className="flex flex-row gap-8">

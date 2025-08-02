@@ -40,82 +40,74 @@ export default function VoxcuraPoster({ windowWidth }: VoxcuraPosterProps) {
                         x: isHovered ? -75 : 0,
                         opacity: isHovered ? 1 : 0
                     }}
-                    transition={{ duration: 0.3, delay: 0.0, ease: "easeOut" }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
                 >
-                    <Card color="custompurple">
+                    <Card color="customwhite">
                         <div className="flex flex-col text-sm text-center">
                             <div className="font-bold mt-2">TIMELINE</div>
                             <div className="text-xs">6 months</div>
                             <div className="font-bold mt-2">TECH STACK</div>
                             <div className="text-xs">Python</div>
-                            <div className="text-xs">TensorFlow</div>
-                            <div className="text-xs">React Native</div>
-                            <div className="text-xs">Firebase</div>
+                            <div className="text-xs">ChainLit</div>
                             <div className="font-bold mt-2">TEAM</div>
-                            <div className="text-xs">5 People</div>
+                            <div className="text-xs">3 People</div>
                             <div className="mb-2"></div>
                         </div>
                     </Card>
                 </motion.div>
 
                 <motion.div
-                    className="absolute top-3/5 -translate-y-1/2 -left-16 z-10"
+                    className="absolute top-2/5 -translate-y-1/2 -left-20 z-10"
                     initial={{ x: 0, opacity: 0 }}
                     animate={{
-                        x: isHovered ? -90 : 0,
+                        x: isHovered ? -40 : 0,
                         opacity: isHovered ? 1 : 0
                     }}
                     transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
                 >
-                    <Card color="custompurple">
-                        <a 
-                            href="#" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-4 cursor-pointer hover:opacity-80"
-                        >
-                            <div className="text-sm font-bold">GitHub</div>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11"/>
-                            </svg>
-                        </a>
+                    <Card color="customwhite">
+                        <div className="flex flex-col text-sm text-center">
+                            <div className="font-bold mx-2">2024</div>
+                        </div>
                     </Card>
                 </motion.div>
                 
                 <motion.div
-                    className="absolute top-1/2 -translate-y-1/2 -right-18 z-10"
+                    className="absolute top-2/5 -translate-y-1/2 -right-14 z-10"
                     initial={{ x: 0, opacity: 0 }}
                     animate={{
-                        x: isHovered ? 85 : 0,
+                        x: isHovered ? 95 : 0,
                         opacity: isHovered ? 1 : 0
                     }}
-                    transition={{ duration: 0.3, delay: 0.15, ease: "easeOut" }}
+                    transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
                 >
-                    <div className="w-[150px]">
-                        <Card color="custompurple">
-                            <div className="font-bold mt-2 mb-2">WHAT IS THIS?</div>
-                            <p className="text-sm text-justify">An AI-powered healthcare application that analyzes voice patterns to detect early signs of respiratory conditions and provides personalized health insights.</p>
+                    <div className="w-[120px]">
+                        <Card color="customwhite">
+                            <div className="text-center">
+                                <div className="font-bold mt-2 mb-2">AWARDS</div>
+                                <div className="text-xs">Won $50,000 at Dartmouth Health-Tech Accelerator</div>
+                                <div className="mb-2"></div>
+                            </div>
                         </Card>
                     </div>
                 </motion.div>
 
                 <motion.div
-                    className="absolute top-1/4 -translate-y-1/2 -right-14 z-10"
+                    className="absolute top-3/4 -translate-y-1/2 -right-18 z-10"
                     initial={{ x: 0, opacity: 0 }}
                     animate={{
-                        x: isHovered ? 70 : 0,
+                        x: isHovered ? 130 : 0,
                         opacity: isHovered ? 1 : 0
                     }}
-                    transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
                 >
-                    <Card color="custompurple">
-                        <div className="text-center">
-                            <div className="font-bold mt-2 mb-2">AWARDS</div>
-                            <div className="text-xs">Best Healthcare</div>
-                            <div className="text-xs">Innovation</div>
-                            <div className="mb-2"></div>
-                        </div>
-                    </Card>
+                    <div className="w-[170px]">
+                        <Card color="customwhite">
+                            <div className="font-bold mt-2 mb-2">WHAT IS THIS?</div>
+                            <p className="text-sm text-justify">Voxcura is a multi-agent LLM chatbot that provides medical consultation through conversational symptom assessment and delivers differential diagnoses with great accuracy.
+                            </p>
+                        </Card>
+                    </div>
                 </motion.div>
             </div>
         </div>

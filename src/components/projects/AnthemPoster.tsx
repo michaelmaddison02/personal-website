@@ -40,19 +40,21 @@ export default function AnthemPoster({ windowWidth }: AnthemPosterProps) {
                         x: isHovered ? -70 : 0,
                         opacity: isHovered ? 1 : 0
                     }}
-                    transition={{ duration: 0.3, delay: 0.05, ease: "easeOut" }}
+                    transition={{ duration: 0.3, delay: 0.0, ease: "easeOut" }}
                 >
                     <Card color="customgreen">
                         <div className="flex flex-col text-sm text-center">
                             <div className="font-bold mt-2">TIMELINE</div>
-                            <div className="text-xs">2 months</div>
+                            <div className="text-xs">7 months</div>
                             <div className="font-bold mt-2">TECH STACK</div>
                             <div className="text-xs">React</div>
-                            <div className="text-xs">Node.js</div>
-                            <div className="text-xs">MongoDB</div>
+                            <div className="text-xs">Typescript</div>
                             <div className="text-xs">Express.js</div>
+                            <div className="text-xs">MongoDB</div>
+                            <div className="text-xs">Python FastAPI</div>
+                            <div className="text-xs"></div>
                             <div className="font-bold mt-2">TEAM</div>
-                            <div className="text-xs">3 People</div>
+                            <div className="text-xs">4 People</div>
                             <div className="mb-2"></div>
                         </div>
                     </Card>
@@ -62,23 +64,13 @@ export default function AnthemPoster({ windowWidth }: AnthemPosterProps) {
                     className="absolute top-1/2 -translate-y-1/2 -left-16 z-10"
                     initial={{ x: 0, opacity: 0 }}
                     animate={{
-                        x: isHovered ? -85 : 0,
+                        x: isHovered ? -80 : 0,
                         opacity: isHovered ? 1 : 0
                     }}
                     transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
                 >
                     <Card color="customgreen">
-                        <a 
-                            href="#" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-4 cursor-pointer hover:opacity-80"
-                        >
-                            <div className="text-sm font-bold">GitHub</div>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11"/>
-                            </svg>
-                        </a>
+                        <div className="text-sm font-bold mx-2">2024-2025</div>
                     </Card>
                 </motion.div>
                 
@@ -86,36 +78,18 @@ export default function AnthemPoster({ windowWidth }: AnthemPosterProps) {
                     className="absolute top-2/3 -translate-y-1/2 -right-20 z-10"
                     initial={{ x: 0, opacity: 0 }}
                     animate={{
-                        x: isHovered ? 90 : 0,
+                        x: isHovered ? 100 : 0,
                         opacity: isHovered ? 1 : 0
                     }}
-                    transition={{ duration: 0.3, delay: 0.15, ease: "easeOut" }}
+                    transition={{ duration: 0.3, delay: 0.0, ease: "easeOut" }}
                 >
                     <div className="w-[160px]">
                         <Card color="customgreen">
                             <div className="font-bold mt-2 mb-2">WHAT IS THIS?</div>
-                            <p className="text-sm text-justify">A music discovery platform that connects artists with listeners through curated playlists and personalized recommendations based on mood and genre preferences.</p>
+                            <p className="text-sm text-justify">Anthem is the first end-to-end platform to discover, discuss and document live music experiences. This is a full-stack proof-of-concept project that my three teammates and I created to address that gaps we found in the live-music discovery process.
+                            </p>
                         </Card>
                     </div>
-                </motion.div>
-
-                <motion.div
-                    className="absolute top-1/3 -translate-y-1/2 -right-16 z-10"
-                    initial={{ x: 0, opacity: 0 }}
-                    animate={{
-                        x: isHovered ? 75 : 0,
-                        opacity: isHovered ? 1 : 0
-                    }}
-                    transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
-                >
-                    <Card color="customgreen">
-                        <div className="text-center">
-                            <div className="font-bold mt-2 mb-2">AWARDS</div>
-                            <div className="text-xs">Best UI/UX</div>
-                            <div className="text-xs">Design</div>
-                            <div className="mb-2"></div>
-                        </div>
-                    </Card>
                 </motion.div>
             </div>
         </div>

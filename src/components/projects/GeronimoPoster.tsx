@@ -64,30 +64,6 @@ export default function GeronimoPoster({ windowWidth }: GeronimoPosterProps) {
                         </div>
                     </Card>
                 </motion.div>
-
-                {/* <motion.div
-                    className="absolute top-1/2 -translate-y-1/2 -left-20 z-10"
-                    initial={{ x: 0, opacity: 0 }}
-                    animate={{
-                        x: isHovered ? -60 : 0,
-                        opacity: isHovered ? 1 : 0
-                    }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                >
-                    <Card color="customorange">
-                        <a 
-                            href="https://github.com/michaelmaddison02/geronimo-stilton" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-4 cursor-pointer hover:opacity-80"
-                        >
-                            <div className="text-sm font-bold">GitHub</div>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11"/>
-                            </svg>
-                        </a>
-                    </Card>
-                </motion.div> */}
                 
                 <motion.div
                     className="absolute top-3/4 -translate-y-1/2 -right-16 z-10"
@@ -104,6 +80,21 @@ export default function GeronimoPoster({ windowWidth }: GeronimoPosterProps) {
                             <p className="text-sm text-justify">A creative text styling application that analyzes the emotional content of text and applies dynamic, emotion-based styling to individual words.</p>
                         </Card>
                     </div>
+                </motion.div>
+
+                <motion.div
+                    className="absolute top-2/4 -translate-y-1/2 -right-16 z-10"
+                    initial={{ x: -40, opacity: 0 }}
+                    animate={{
+                        x: isHovered ? 40 : -40,
+                        opacity: isHovered ? 1 : 0
+                    }}
+                    transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
+                >
+                    
+                    <Card color="customorange">
+                        <div className="font-bold mx-2">2025</div>
+                    </Card>
                 </motion.div>
             </div>
         </div>

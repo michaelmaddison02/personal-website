@@ -15,6 +15,7 @@ const colorMap: { [key: string]: string } = {
     customgreen: '#17c964',
     customorange: '#f5a524',
     customred: '#f31260',
+    customwhite: '#ffffff',
 };
 
 export default function Card({ color = 'customgray', children }: CardProps) {
