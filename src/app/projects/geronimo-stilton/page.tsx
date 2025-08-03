@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import BackArrowIcon from "@/components/icons/BackArrowIcon";
 import ExternalLinkIcon from "@/components/icons/ExternalLinkIcon";
 
-
 export default function Page() {
     const router = useRouter();
 

@@ -12,7 +12,7 @@ export default function siteHeaderNav() {
 
     const isProjectsPage = pathname === '/projects';
     const buttonClass = isProjectsPage 
-        ? "font-stamp-three text-lg text-[#ececec] opacity-30 hover:opacity-50 transition-opacity"
+        ? "font-squidboy font-thin text-lg text-[#ececec] opacity-30 hover:opacity-50 transition-opacity"
         : "font-stamp-three text-lg font-bold text-black hover:opacity-70 transition-opacity";
 
     return (

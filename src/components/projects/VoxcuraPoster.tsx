@@ -4,6 +4,7 @@ import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { motion } from 'motion/react';
+import { useRouter } from 'next/navigation';
 import GLBModel from '../threejs/GLBModel';
 import Card from '../Card';
 
@@ -13,6 +14,11 @@ interface VoxcuraPosterProps {
 
 export default function VoxcuraPoster({ windowWidth }: VoxcuraPosterProps) {
     const [isHovered, setIsHovered] = React.useState(false);
+    const router = useRouter();
+
+    const handleModelClick = () => {
+        router.push('/projects/voxcura');
+    };
 
     return (
         <div className="w-screen h-full flex justify-center items-center flex-shrink-0 snap-start">
@@ -29,6 +35,7 @@ export default function VoxcuraPoster({ windowWidth }: VoxcuraPosterProps) {
                     <GLBModel 
                         modelPath="/images/voxcura_poster.glb" 
                         onHoverChange={setIsHovered}
+                        onClick={handleModelClick}
                     />
                 </Canvas>
                 

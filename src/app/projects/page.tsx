@@ -1,8 +1,5 @@
 "use client"
 import SiteHeaderNav from "../../components/siteHeaderNav"
-import ProjectTile from "../../components/ProjectTile"
-import Image from 'next/image';
-import { motion, useScroll, useTransform } from "motion/react"
 
 import React from 'react';
 import GeronimoPoster from '../../components/projects/GeronimoPoster';

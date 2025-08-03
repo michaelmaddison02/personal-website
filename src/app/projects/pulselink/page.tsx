@@ -2,7 +2,6 @@
 
 import Card from "@/components/Card";
 import SiteHeaderNav from "@/components/siteHeaderNav"
-import { David_Libre } from "next/font/google";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import BackArrowIcon from "@/components/icons/BackArrowIcon";
@@ -96,19 +95,19 @@ export default function Page() {
                                 
                                 <div className="min-w-[130px] flex items-center">
                                     <Card color="custompurple">
-                                    <div className="flex flex-col text-sm">
-                                        <div className="font-bold mt-2">TIMELINE</div>
-                                        <div className="text-xs">3 weeks</div>
-                                        <div className="font-bold mt-2">TECH STACK</div>
-                                        <div className="text-xs">Arduino</div>
-                                        <div className="text-xs">C++</div>
-                                        <div className="font-bold mt-2">TEAM</div>
-                                        <div className="text-xs">4 People</div>
-                                        <div className="mb-2"></div>
-                                    </div>
-                                    
+                                        <div className="flex flex-col text-sm">
+                                            <div className="font-bold mt-2">TIMELINE</div>
+                                            <div className="text-xs">3 weeks</div>
+                                            <div className="font-bold mt-2">TECH STACK</div>
+                                            <div className="text-xs">Arduino</div>
+                                            <div className="text-xs">C++</div>
+                                            <div className="font-bold mt-2">TEAM</div>
+                                            <div className="text-xs">4 People</div>
+                                            <div className="mb-2"></div>
+                                        </div>
                                     </Card>
                                 </div>
+                                
                                 <div id="challenge-section" className="flex flex-col">
                                     <span className="font-crit font-regular underline text-lg mb-2">CHALLENGE</span>
                                     <span className="font-crit font-regular text-justify text-sm">We were tasked to improve networking and connecting among Dartmouth students. More specifically, we were prompted to think through how we might create connections in a divided time, how we might meet people in a new place, and/or how we might enable individuals to identify people in a crowded space. Additionally, we were challenged to think beyond app-based solutions and innovate with wearables, AR/VR, interactive dashboards, etc.</span>

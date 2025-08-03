@@ -1,15 +1,12 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import Image from "next/image"
 import SiteHeaderNav from '@/components/siteHeaderNav';
-import BackgroundCanvas from '@/components/threejs/BackgroundCanvas';
 
 export default function Home() {
 
   return (
     <div>
-      {/* First section - Home page */}
       <div id="home" className="min-h-screen flex flex-col p-4">
         <SiteHeaderNav />
         
