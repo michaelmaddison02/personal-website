@@ -22,7 +22,7 @@ export default function InfoButton() {
       
       {/* Image container moving up */}
       <motion.div
-        className="absolute bottom-0 right-0 rounded-sm w-48 border-3 border-black z-10"
+        className="absolute bottom-0 right-0 rounded-lg w-48 border-3 border-black z-10 overflow-hidden"
         style={{ transformOrigin: 'bottom right' }}
         initial={INITIAL_STATE}
         animate={isInfoHovered ? { 
@@ -44,7 +44,7 @@ export default function InfoButton() {
       
       {/* Image container moving left */}
       <motion.div
-        className="absolute bottom-0 right-0 rounded-sm w-48 border-3 border-black z-0"
+        className="absolute bottom-0 right-0 rounded-lg w-48 border-3 border-black z-0 overflow-hidden"
         style={{ transformOrigin: 'bottom right' }}
         initial={INITIAL_STATE}
         animate={isInfoHovered ? { 
@@ -66,7 +66,7 @@ export default function InfoButton() {
 
       {/* Text container moving diagonally */}
       <motion.div
-        className="absolute bottom-0 right-0 rounded-sm w-48 border-3 border-black z-30"
+        className="absolute bottom-0 right-0 rounded-lg w-48 border-3 border-black z-30"
         style={{ transformOrigin: 'bottom right' }}
         initial={INITIAL_STATE}
         animate={isInfoHovered ? { 
