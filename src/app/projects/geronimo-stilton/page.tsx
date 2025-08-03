@@ -77,7 +77,7 @@ export default function Page() {
             </div>
             <div className="flex flex-row gap-4 justify-center overflow-hidden">
                 <video 
-                    src="/videos/geronimo-stilton-changing-default-text.mov"
+                    src="/videos/geronimo-stilton/geronimo-stilton-changing-default-text.mov"
                     autoPlay 
                     loop 
                     muted 
@@ -85,7 +85,7 @@ export default function Page() {
                     className="w-[450px] object-contain border-customorange opacity-90 border-2 rounded-lg"
                 />
                 <video 
-                    src="/videos/geronimo-stilton-restyling.mov"
+                    src="/videos/geronimo-stilton/geronimo-stilton-restyling.mov"
                     autoPlay 
                     loop 
                     muted 
@@ -93,7 +93,7 @@ export default function Page() {
                     className="w-[450px] object-contain border-customorange opacity-90 border-2 rounded-lg"
                 />
                 <video 
-                    src="/videos/geronimo-stilton-click-restyling.mov"
+                    src="/videos/geronimo-stilton/geronimo-stilton-click-restyling.mov"
                     autoPlay 
                     loop 
                     muted 
