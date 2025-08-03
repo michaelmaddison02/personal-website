@@ -2,12 +2,13 @@
 
 import Image from "next/image"
 import SiteHeaderNav from '@/components/siteHeaderNav';
+import InfoButton from '@/components/InfoButton';
 
 export default function Home() {
 
   return (
     <div>
-      <div id="home" className="min-h-screen flex flex-col p-4">
+      <div id="home" className="min-h-screen flex flex-col p-4 relative">
         <SiteHeaderNav />
         
         <div className="flex justify-center" style={{ paddingTop: '20vh' }}>
@@ -20,6 +21,7 @@ export default function Home() {
             </div>
           </div>      
         </div>
+        <InfoButton />
       </div>
     </div>
   );

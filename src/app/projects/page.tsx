@@ -15,9 +15,7 @@ export default function Page() {
     
     const scrollToIndex = (index) => {
         if (scrollContainerRef.current) {
-            const scrollWidth = scrollContainerRef.current.scrollWidth;
-            const containerWidth = scrollContainerRef.current.clientWidth;
-            const scrollPosition = (scrollWidth / totalItems) * index;
+            const scrollPosition = window.innerWidth * index;
             scrollContainerRef.current.scrollTo({
                 left: scrollPosition,
                 behavior: 'smooth'
@@ -42,8 +40,7 @@ export default function Page() {
         const handleScroll = () => {
             if (scrollContainerRef.current) {
                 const scrollLeft = scrollContainerRef.current.scrollLeft;
-                const containerWidth = scrollContainerRef.current.clientWidth;
-                const newIndex = Math.round(scrollLeft / containerWidth);
+                const newIndex = Math.round(scrollLeft / window.innerWidth);
                 setCurrentIndex(newIndex);
             }
         };
