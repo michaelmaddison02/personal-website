@@ -6,7 +6,7 @@ import InfoIcon from '@/components/icons/InfoIcon';
 import Image from 'next/image';
 
 const ANIMATION_CONFIG = {
-  duration: 0.15,
+  duration: 0.175,
   ease: "easeOut" as const
 };
 
@@ -22,7 +22,7 @@ export default function InfoButton() {
       
       {/* Image container moving up */}
       <motion.div
-        className="absolute bottom-0 right-0 rounded-sm w-48 border-2 border-black z-10"
+        className="absolute bottom-0 right-0 rounded-sm w-48 border-3 border-black z-10"
         style={{ transformOrigin: 'bottom right' }}
         initial={INITIAL_STATE}
         animate={isInfoHovered ? { 
@@ -44,7 +44,7 @@ export default function InfoButton() {
       
       {/* Image container moving left */}
       <motion.div
-        className="absolute bottom-0 right-0 rounded-sm w-48 border-2 border-black z-0"
+        className="absolute bottom-0 right-0 rounded-sm w-48 border-3 border-black z-0"
         style={{ transformOrigin: 'bottom right' }}
         initial={INITIAL_STATE}
         animate={isInfoHovered ? { 
@@ -66,13 +66,13 @@ export default function InfoButton() {
 
       {/* Text container moving diagonally */}
       <motion.div
-        className="absolute bottom-0 right-0 rounded-sm w-48 border-2 border-black z-30"
+        className="absolute bottom-0 right-0 rounded-sm w-48 border-3 border-black z-30"
         style={{ transformOrigin: 'bottom right' }}
         initial={INITIAL_STATE}
         animate={isInfoHovered ? { 
           scale: 1, 
-          x: -170, 
-          y: -170,
+          x: -175, 
+          y: -180,
           opacity: 1
         } : RESET_STATE}
         transition={ANIMATION_CONFIG}
