@@ -15,9 +15,12 @@ export default function Page() {
         <div className="min-h-screen min-w-screen flex flex-col gap-3">
             <div id="hero-section" className="h-[250px] w-full relative rounded-3xl overflow-hidden border-customorange border-2">
                 <Image src={'/images/geronimo-stilton/mouse_motif.jpg'} alt="crowd of people" fill className="object-cover opacity-50"/>
+                <div className="absolute top-4 left-4 right-4 z-10">
+                    <SiteHeaderNav />
+                </div>
                 <button 
                     onClick={() => router.back()}
-                    className="absolute top-4 left-4 text-white hover:text-gray-300 transition-colors"
+                    className="absolute top-4 left-4 text-white hover:text-gray-300 transition-colors z-20"
                 >
                     <BackArrowIcon className="w-5 h-5" />
                 </button>

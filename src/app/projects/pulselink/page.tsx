@@ -15,9 +15,12 @@ export default function Page() {
         <div className="min-h-screen min-w-screen flex flex-col gap-3">
             <div id="hero-section" className="h-[250px] w-full relative rounded-3xl overflow-hidden border-customblue border-2">
                 <Image src={'/images/pulselink/music_festival_crowd.jpg'} alt="crowd of people" fill className="object-cover opacity-50"/>
+                <div className="absolute top-4 left-4 right-4 z-10">
+                    <SiteHeaderNav />
+                </div>
                 <button 
                     onClick={() => router.back()}
-                    className="absolute top-4 left-4 text-white hover:text-gray-300 transition-colors"
+                    className="absolute top-4 left-4 text-white hover:text-gray-300 transition-colors z-20"
                 >
                     <BackArrowIcon className="w-5 h-5" />
                 </button>
@@ -107,7 +110,7 @@ export default function Page() {
                                         </div>
                                     </Card>
                                 </div>
-                                
+
                                 <div id="challenge-section" className="flex flex-col">
                                     <span className="font-crit font-regular underline text-lg mb-2">CHALLENGE</span>
                                     <span className="font-crit font-regular text-justify text-sm">We were tasked to improve networking and connecting among Dartmouth students. More specifically, we were prompted to think through how we might create connections in a divided time, how we might meet people in a new place, and/or how we might enable individuals to identify people in a crowded space. Additionally, we were challenged to think beyond app-based solutions and innovate with wearables, AR/VR, interactive dashboards, etc.</span>

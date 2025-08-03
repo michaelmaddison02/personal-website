@@ -10,10 +10,13 @@ export default function siteHeaderNav() {
       router.push(path);
     };
 
-    const isProjectsPage = pathname === '/projects';
-    const buttonClass = isProjectsPage 
-        ? "font-squidboy font-thin text-lg text-[#ececec] opacity-30 hover:opacity-50 transition-opacity"
-        : "font-stamp-three text-lg font-bold text-black hover:opacity-70 transition-opacity";
+    const pageStyles: { [key: string]: string } = {
+        '/': "font-stamp-three text-lg font-bold text-black hover:opacity-70 transition-opacity", // Home page
+        '/projects': "font-squidboy font-thin text-lg text-[#ececec] opacity-30 hover:opacity-50 transition-opacity", // Projects page
+        default: "font-squidboy font-thin text-lg font-bold text-white opacity-85 hover:opacity-50 transition-opacity",
+    };
+    
+    const buttonClass = pageStyles[pathname] || pageStyles.default;
 
     return (
         <div id="siteHeader" className="flex flex-row justify-end gap-3 pb-4">
