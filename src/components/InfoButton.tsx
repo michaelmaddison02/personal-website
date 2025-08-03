@@ -77,7 +77,7 @@ export default function InfoButton() {
         } : RESET_STATE}
         transition={ANIMATION_CONFIG}
       >
-        <div className="font-stamp-one text-sm text-white bg-black opacity-70 p-4">This home page, including the aligator icon, attempts to digitize a mural that my good friend Yvonne Chen and I made in college. Inspired by Minna Leunig, we created a wall-to-wall mural of bumpy animals</div>
+        <div className="font-stamp-one text-sm text-white bg-black opacity-70 p-4">This home page, including the aligator icon, attempts to digitize a mural that my close friend Yvonne Chen and I made in college. Inspired by Minna Leunig, we created a wall-to-wall mural of bumpy animals</div>
       </motion.div>
       
       {/* InfoIcon */}
