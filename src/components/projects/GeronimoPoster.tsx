@@ -33,7 +33,7 @@ export default function GeronimoPoster({ windowWidth }: GeronimoPosterProps) {
                     <ambientLight intensity={0.6} />
                     <directionalLight position={[5, 5, 5]} intensity={0.8} />
                     <GLBModel 
-                        modelPath="/images/geronimo_stilton_poster.glb" 
+                        modelPath="/3d-objects/geronimo_stilton_poster.glb" 
                         onHoverChange={setIsHovered}
                         onClick={handleModelClick}
                     />

@@ -33,7 +33,7 @@ export default function VoxcuraPoster({ windowWidth }: VoxcuraPosterProps) {
                     <ambientLight intensity={0.6} />
                     <directionalLight position={[5, 5, 5]} intensity={0.8} />
                     <GLBModel 
-                        modelPath="/images/voxcura_poster.glb" 
+                        modelPath="/3d-objects/voxcura_poster.glb" 
                         onHoverChange={setIsHovered}
                         onClick={handleModelClick}
                     />

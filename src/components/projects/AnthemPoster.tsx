@@ -27,7 +27,7 @@ export default function AnthemPoster({ windowWidth }: AnthemPosterProps) {
                     <ambientLight intensity={0.6} />
                     <directionalLight position={[5, 5, 5]} intensity={1.8} />
                     <GLBModel 
-                        modelPath="/images/anthem_poster.glb" 
+                        modelPath="/3d-objects/anthem_poster.glb" 
                         onHoverChange={setIsHovered}
                     />
                 </Canvas>

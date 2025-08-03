@@ -33,7 +33,7 @@ export default function PulseLinkPoster({ windowWidth }: PulseLinkPosterProps) {
                     <ambientLight intensity={0.6} />
                     <directionalLight position={[5, 5, 5]} intensity={1.8} />
                     <GLBModel 
-                        modelPath="/images/pulseLink_poster.glb" 
+                        modelPath="/3d-objects/pulseLink_poster.glb" 
                         onHoverChange={setIsHovered}
                         onClick={handleModelClick}
                     />
