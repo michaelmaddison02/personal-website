@@ -14,7 +14,7 @@ export default function Page() {
         <>
         <div className="min-h-screen min-w-screen flex flex-col gap-3">
             <div id="hero-section" className="h-[250px] w-full relative rounded-3xl overflow-hidden border-customorange border-2">
-                <Image src={'/images/pulselink/music_festival_crowd.jpg'} alt="crowd of people" fill className="object-cover opacity-50"/>
+                <Image src={'/images/geronimo-stilton/mouse_motif.jpg'} alt="crowd of people" fill className="object-cover opacity-50"/>
                 <button 
                     onClick={() => router.back()}
                     className="absolute top-4 left-4 text-white hover:text-gray-300 transition-colors"
