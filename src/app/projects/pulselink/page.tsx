@@ -14,7 +14,7 @@ export default function Page() {
         
         <div className="min-h-screen min-w-screen flex flex-col gap-3">
             <div id="hero-section" className="h-[250px] w-full relative rounded-3xl overflow-hidden border-customblue border-2">
-                <Image src={'/images/pulselink/music_festival_crowd.jpg'} alt="crowd of people" fill className="object-cover opacity-50"/>
+                <Image src={'/images/pulselink/large_crowd_film_photo.jpg'} alt="crowd of people" fill className="object-cover opacity-50"/>
                 <div className="absolute top-4 left-4 right-4 z-10">
                     <SiteHeaderNav />
                 </div>
@@ -46,53 +46,6 @@ export default function Page() {
                         <div id="project-header" className="flex flex-col p-4">
                             <span className="font-crit font-bold text-xl">WE CREATED PULSELINK - A PROXIMITY SENSING WATCH TO HELP ONE FIND THEIR FRIENDS IN CROWDED INDOOR AREAS</span>
                         </div>
-                    </Card>
-
-                    <div id="intro-section" className="flex flex-row gap-3">
-                        <div className="hidden min-[650px]:block">
-                            <Card>
-                                <div className="w-[400px] min-h-[350px] relative -m-3 overflow-hidden rounded-lg">
-                                    <Image src={'/images/Film-Burn-8.jpg'} alt="film burn texture" fill className="object-cover"/>
-                                </div>
-                            </Card>
-                        </div> 
-                        <Card color="customblue">
-                            <div className="flex items-center h-full p-4">             
-                                <span className="font-crit text-sm text-justify">This project was my first comprehensive dive into <span className="text-custompurple">wearable technology</span> and the process of <span className="text-custompurple">human-centered design</span>. With the three teammates, we underwent the full human-centered design process starting with <span className="text-custompurple">initial user research</span> and finishing with a <span className="text-custompurple">fully functional prototype.</span></span>
-                            </div>
-                        </Card>
-                    </div>
-                </div>
-            </div>
-            {/* <div className="flex flex-row gap-4 justify-center overflow-hidden">
-                <video 
-                    src="/videos/geronimo-stilton-changing-default-text.mov"
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline
-                    className="w-[450px] object-contain border-customorange opacity-90 border-2 rounded-lg"
-                />
-                <video 
-                    src="/videos/geronimo-stilton-restyling.mov"
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline
-                    className="w-[450px] object-contain border-customorange opacity-90 border-2 rounded-lg"
-                />
-                <video 
-                    src="/videos/geronimo-stilton-click-restyling.mov"
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline
-                    className="w-[450px] object-contain border-customorange opacity-90 border-2 rounded-lg"
-                />
-            </div> */}
-            <div id="siteBody" className="flex flex-col items-center gap-3 px-4">
-                <div className="flex flex-col w-full max-w-[650px] gap-3">
-                    <Card color="customblue">
                         <div className="flex flex-col gap-8 w-full p-4">                        
                             <div id="project-description" className="flex flex-row gap-8">
                                 
@@ -112,26 +65,56 @@ export default function Page() {
                                 </div>
 
                                 <div id="challenge-section" className="flex flex-col">
-                                    <span className="font-crit font-regular underline text-lg mb-2">CHALLENGE</span>
-                                    <span className="font-crit font-regular text-justify text-sm">We were tasked to improve networking and connecting among Dartmouth students. More specifically, we were prompted to think through how we might create connections in a divided time, how we might meet people in a new place, and/or how we might enable individuals to identify people in a crowded space. Additionally, we were challenged to think beyond app-based solutions and innovate with wearables, AR/VR, interactive dashboards, etc.</span>
+                                    <span className="font-crit font-regular underline text-lg mb-2">ABOUT</span>
+                                    <span className="font-crit text-sm text-justify">This project was my first comprehensive dive into <span className="text-custompurple">wearable technology</span> and the process of <span className="text-custompurple">human-centered design</span>. With the three teammates, we underwent the full human-centered design process starting with <span className="text-custompurple">initial user research</span> and finishing with a <span className="text-custompurple">fully functional prototype.</span> In the end, we created and tested arduino-based proximity sensing watches, finding that our devices signifigantly reduced the time spent searching for friends in crowded areas.</span>
                                 </div>
                             </div>
                         </div>
                     </Card>
-                    <div id="solution-section" className="flex flex-row gap-3">
-                        <Card color="customblue">
-                            <div className="flex flex-col h-full p-4">             
-                                <span className="font-crit font-regular underline text-lg mb-2">SOLUTION</span>
-                                <span className="font-crit font-regular text-justify text-sm">PulseLink is a wearable friend-finding device optimized for crowded indoor environments. Unlike existing products like Totem Compass and Crowd Compass, PulseLink uses a mesh network of devices and anchors to enable precise indoor positioning. Devices communicate with local anchors to determine their location, then broadcast to paired devices, displaying friends' direction and distance on an intuitive LED matrix. User testing confirmed PulseLink significantly improves users' ability to quickly reconnect with friends in crowded spaces.
-                                </span>
-                            </div>
-                        </Card>
-                        <div className="hidden min-[650px]:block">
-                            <Card>
-                                <div className="w-[300px] h-full min-h-[400px] relative -m-3 overflow-hidden rounded-lg">
-                                    <Image src={'/images/Film-Burn-8.jpg'} alt="film burn texture" fill className="object-cover"/>
+
+                    <div id="how-it-works-section" className="flex flex-row gap-3">
+                        <div className="w-1/2 rounded-lg overflow-hidden border-customblue border-2 relative">
+                            <Image src={'/images/pulselink/pulselink_infographic.png'} alt="decorative texture" fill className="object-cover"/>
+                        </div>
+                        <div className="w-1/2">
+                            <Card color="custompurple">
+                                <div className="flex flex-col h-full p-4">             
+                                    <span className="font-crit font-regular underline text-lg mb-2">HOW IT WORKS</span>
+                                    <span className="font-crit font-regular text-justify text-sm">PulseLink's 8×8 LED matrix functions as a real-time spatial map that displays the user's position at the center with illuminated LEDs indicating the relative direction and proximity of their friends in the surrounding area. This top-down mini-map interface allows users to quickly glance at their wrist and understand which direction to move without needing to interact with a smartphone or complex interface. 
+                                    </span>
                                 </div>
                             </Card>
+                        </div>
+                    </div>
+
+                    <Card color="customblue">
+                        <div id="challenge-section" className="flex flex-col w-full p-4">                         
+                            <span className="font-crit font-regular underline text-lg mb-2">CHALLENGE</span>
+                            <span className="font-crit font-regular text-justify text-sm">In crowded social environments like college parties and music festivals, people frequently get separated from their friends and struggle to reconnect due to noise, dense crowds, and the limitations of smartphone-based solutions like Find My Friends, which lack the spatial precision needed for indoor, high-density settings. This separation leads to stress, frustration, and disrupted social experiences as individuals wander aimlessly trying to locate their group. We aimed to solve this problem.</span>
+                        </div>
+                    </Card>
+
+                    <div id="solution-section" className="flex flex-row gap-3">
+                        <div className="w-3/5">
+                            <Card color="customblue">
+                                <div className="flex flex-col h-full p-4">             
+                                    <span className="font-crit font-regular underline text-lg mb-2">SOLUTION</span>
+                                    <span className="font-crit font-regular text-justify text-sm">PulseLink is a wearable friend-finding device optimized for crowded indoor environments. Unlike existing products like Totem Compass and Crowd Compass, PulseLink uses a mesh network of devices and anchors to enable precise indoor positioning. Devices communicate with local anchors to determine their location, then broadcast to paired devices, displaying friends' direction and distance on an intuitive LED matrix. User testing confirmed PulseLink significantly improves users' ability to quickly reconnect with friends in crowded spaces.
+                                    </span>
+                                </div>
+                            </Card>
+                        </div>
+                        <div className="w-2/5 rounded-lg overflow-hidden border-customblue border-2 relative">
+                            <video 
+                                src="/videos/pulselink/pulselink-initial-prototype (online-video-cutter.com).mp4"
+                                autoPlay
+                                loop
+                                muted
+                                className="w-full h-full object-cover"
+                                preload="metadata"
+                            >
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                     </div>
                     
@@ -145,7 +128,7 @@ export default function Page() {
                             
                             <div className="flex flex-row">
                                 <div className="flex min-w-[100px]"></div>
-                                <span className="font-crit font-regular text-justify text-sm">“During Green Key [Dartmouth’s annual springtime music festival], I left my friends in the front to go to the bathroom. By the time I made my way back to them, they weren’t in the area I thought I had left them. Find My Friends wasn’t helpful, since it said I was practically on top of them. And even when they were answering their texts, it was so hard to communicate where in the large crowd they were.”
+                                <span className="font-crit font-regular italic text-justify text-sm">“During Green Key [Dartmouth’s annual springtime music festival], I left my friends in the front to go to the bathroom. By the time I made my way back to them, they weren’t in the area I thought I had left them. Find My Friends wasn’t helpful, since it said I was practically on top of them. And even when they were answering their texts, it was so hard to communicate where in the large crowd they were.”
                                 </span>
                             </div>
                             
@@ -157,12 +140,12 @@ export default function Page() {
                 </div>
 
                 <div id="design-artifacts" className="flex flex-col sm:flex-row gap-3 px-4">
-                    <Card color="customgreen">
+                    <Card color="custompurple">
                         <div className="flex -m-3 overflow-hidden rounded-lg">
                             <Image src={'/images/pulselink/User_Journey.jpg'} alt="User Journey" width={600} height={400} className="w-full h-auto"/>
                         </div>
                     </Card>
-                    <Card color="customgreen">
+                    <Card color="custompurple">
                         <div className="-m-3 overflow-hidden rounded-lg">
                             <Image src={'/images/pulselink/HMW_Questions.jpg'} alt="How Might We Questions" width={600} height={400} className="w-full h-auto"/>
                         </div>
@@ -171,7 +154,7 @@ export default function Page() {
 
                 <div id="prototypes-and-technical" className="flex flex-col w-full max-w-[650px] gap-3">
                     <div id="prototypes-section" className="flex flex-row gap-3">
-                        <Card color="customgreen">
+                        <Card color="customblue">
                             <div className="relative -m-3 overflow-hidden rounded-lg">
                                 <Image src={'/images/pulselink/pulselink_prototypes.png'} alt="PulseLink prototypes" width={500} height={400} className="object-contain"/>
                             </div>
@@ -208,9 +191,9 @@ export default function Page() {
                             </div>
                         </Card>
                         <div className="hidden min-[650px]:block">
-                            <Card>
+                            <Card color="customblue">
                                 <div className="w-[300px] min-h-[725px] relative -m-3 overflow-hidden rounded-lg">
-                                    <Image src={'/images/Film-Burn-8.jpg'} alt="film burn texture" fill className="object-cover"/>
+                                    <Image src={'/images/pulselink/birds_eye_crowd.jpg'} alt="film burn texture" fill className="object-cover opacity-80"/>
                                 </div>
                             </Card>
                        </div>

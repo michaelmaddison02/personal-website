@@ -43,10 +43,6 @@ export default function Page() {
 
                 <div id="siteBody" className="flex flex-col items-center">
                     <div className="flex flex-col gap-4 w-full max-w-[650px]">
-                        {/* <div id="projectHeader" className="flex flex-col text-white">
-                            <span className="font-crit font-regular text-xl">GERONIMO STILTON</span>
-                            <span id="geronimoStilton_ShortDescription" className="font-crit font-light italic text-s">Full-stack Creative Coding Project</span>
-                        </div> */}
 
                         <Card color="customwhite">
                             <div id="projectDescription" className="flex flex-row gap-8 p-4">
