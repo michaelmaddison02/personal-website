@@ -8,11 +8,7 @@ import { useRouter } from 'next/navigation';
 import GLBModel from '../threejs/GLBModel';
 import Card from '../Card';
 
-interface AnthemPosterProps {
-    windowWidth: number;
-}
-
-export default function AnthemPoster({ windowWidth }: AnthemPosterProps) {
+export default function AnthemPoster() {
     const [isHovered, setIsHovered] = React.useState(false);
 
     const router = useRouter();

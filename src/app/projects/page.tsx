@@ -9,7 +9,6 @@ import VoxcuraPoster from '../../components/projects/VoxcuraPoster';
 
 export default function Page() {
     const [currentIndex, setCurrentIndex] = React.useState(0);
-    const [windowWidth, setWindowWidth] = React.useState(0);
     const scrollContainerRef = React.useRef<HTMLDivElement>(null);
     const totalItems = 4; // We have 3 canvas items
     
@@ -52,19 +51,7 @@ export default function Page() {
         }
     }, []);
 
-    React.useEffect(() => {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-        };
-        
-        // Set initial width
-        setWindowWidth(window.innerWidth);
-        
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
     
-
     return (
         <div className="h-screen flex flex-col p-4 relative">
             <SiteHeaderNav />
@@ -99,10 +86,10 @@ export default function Page() {
                 style={{scrollbarWidth: 'none', msOverflowStyle: 'none', scrollBehavior: 'smooth'}}
             >
                 <div className="flex h-full">
-                    <GeronimoPoster windowWidth={windowWidth} />
-                    <PulseLinkPoster windowWidth={windowWidth} />
-                    <AnthemPoster windowWidth={windowWidth} />
-                    <VoxcuraPoster windowWidth={windowWidth} />
+                    <GeronimoPoster/>
+                    <PulseLinkPoster/>
+                    <AnthemPoster/>
+                    <VoxcuraPoster/>
                 </div>
             </div>
         </div>

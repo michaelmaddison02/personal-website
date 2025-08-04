@@ -8,11 +8,7 @@ import { useRouter } from 'next/navigation';
 import GLBModel from '../threejs/GLBModel';
 import Card from '../Card';
 
-interface PulseLinkPosterProps {
-    windowWidth: number;
-}
-
-export default function PulseLinkPoster({ windowWidth }: PulseLinkPosterProps) {
+export default function PulseLinkPoster() {
     const [isHovered, setIsHovered] = React.useState(false);
     const router = useRouter();
 

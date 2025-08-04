@@ -8,11 +8,7 @@ import { useRouter } from 'next/navigation';
 import GLBModel from '../threejs/GLBModel';
 import Card from '../Card';
 
-interface GeronimoPosterProps {
-    windowWidth: number;
-}
-
-export default function GeronimoPoster({ windowWidth }: GeronimoPosterProps) {
+export default function GeronimoPoster() {
     const [isHovered, setIsHovered] = React.useState(false);
     const router = useRouter();
 

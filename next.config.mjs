@@ -14,27 +14,34 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	webpack: (config, options) => {
+		config.module.rules.push({
+			test: /\.(glsl|vs|fs|vert|frag)$/,
+			use: "raw-loader",
+		});
+		return config;
+	},
 	experimental: {
 		turbo: {
 			rules: {
 				'*.glsl': {
-					loaders: ['raw-loader', 'glslify', 'glslify-loader'],
+					loaders: ['raw-loader'],
 					as: '*.js',
 				},
 				'*.vs': {
-					loaders: ['raw-loader', 'glslify', 'glslify-loader'],
+					loaders: ['raw-loader'],
 					as: '*.js',
 				},
 				'*.fs': {
-					loaders: ['raw-loader', 'glslify', 'glslify-loader'],
+					loaders: ['raw-loader'],
 					as: '*.js',
 				},
 				'*.vert': {
-					loaders: ['raw-loader', 'glslify', 'glslify-loader'],
+					loaders: ['raw-loader'],
 					as: '*.js',
 				},
 				'*.frag': {
-					loaders: ['raw-loader', 'glslify', 'glslify-loader'],
+					loaders: ['raw-loader'],
 					as: '*.js',
 				},
 			},

@@ -8,11 +8,7 @@ import { useRouter } from 'next/navigation';
 import GLBModel from '../threejs/GLBModel';
 import Card from '../Card';
 
-interface VoxcuraPosterProps {
-    windowWidth: number;
-}
-
-export default function VoxcuraPoster({ windowWidth }: VoxcuraPosterProps) {
+export default function VoxcuraPoster() {
     const [isHovered, setIsHovered] = React.useState(false);
     const router = useRouter();
 

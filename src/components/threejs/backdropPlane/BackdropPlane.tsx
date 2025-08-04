@@ -3,7 +3,6 @@
 import { Plane, shaderMaterial } from '@react-three/drei'
 import { extend, useFrame, useThree } from '@react-three/fiber'
 import React, { type FC, useRef } from 'react'
-import { ShaderMaterial } from 'three'
 
 import fragmentShader from './backdropPlane.frag'
 import vertexShader from './backdropPlane.vert'
