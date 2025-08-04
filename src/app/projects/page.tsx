@@ -10,10 +10,10 @@ import VoxcuraPoster from '../../components/projects/VoxcuraPoster';
 export default function Page() {
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const [windowWidth, setWindowWidth] = React.useState(0);
-    const scrollContainerRef = React.useRef(null);
+    const scrollContainerRef = React.useRef<HTMLDivElement>(null);
     const totalItems = 4; // We have 3 canvas items
     
-    const scrollToIndex = (index) => {
+    const scrollToIndex = (index: number) => {
         if (scrollContainerRef.current) {
             const scrollPosition = window.innerWidth * index;
             scrollContainerRef.current.scrollTo({
