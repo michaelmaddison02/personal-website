@@ -1,33 +1,20 @@
 'use client';
 
 import Card from "@/components/Card"
-import SiteHeaderNav from "@/components/siteHeaderNav"
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import BackArrowIcon from "@/components/icons/BackArrowIcon";
+import ProjectHero from "@/components/ProjectHero";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 export default function Page() {
-    const router = useRouter();
-
     return (
         <div className="min-h-screen min-w-screen flex flex-col gap-3">
-            <div id="hero-section" className="h-[250px] w-full relative sm:rounded-3xl overflow-hidden border-customgreen border-2">
-                <Image src={'/images/anthem/green-blue-grainy-gradient-extended.jpeg'} alt="red cells" fill className="object-cover opacity-50"/>
-                <div className="absolute top-4 left-4 right-4 z-10">
-                    <SiteHeaderNav />
-                </div>
-                <button 
-                    onClick={() => router.back()}
-                    className="absolute top-4 left-4 text-white hover:text-gray-300 transition-colors z-20"
-                >
-                    <BackArrowIcon className="w-5 h-5" />
-                </button>
-                <div className="absolute bottom-4 left-6 font-crit font-bold text-white opacity-80">
-                    <div className="text-3xl md:text-3xl">ANTHEM</div>
-                    <div className="text-s font-light italic">An End-to-End Platform to Discover and Document Live Music</div>
-                </div>
-            </div>
+            <ProjectHero 
+                title="ANTHEM"
+                subtitle="An End-to-End Platform to Discover and Document Live Music"
+                backgroundImage="/images/anthem/green-blue-grainy-gradient-extended.jpeg"
+                backgroundAlt="green blue gradient background"
+                borderColor="border-customgreen"
+                rounded={false}
+            />
             <div className="p-2">
                 <div id="siteBody" className="flex flex-col items-center">
                     <div className="flex flex-col gap-4 w-full max-w-[650px]">

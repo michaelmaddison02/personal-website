@@ -1,42 +1,20 @@
 'use client';
 
 import Card from "@/components/Card";
-import SiteHeaderNav from "@/components/siteHeaderNav"
+import ProjectHero from "@/components/ProjectHero";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import BackArrowIcon from "@/components/icons/BackArrowIcon";
-import ExternalLinkIcon from "@/components/icons/ExternalLinkIcon";
 
 export default function Page() {
-    const router = useRouter();
-    
     return (
         <div className="min-h-screen min-w-screen flex flex-col gap-3">
-            <div id="hero-section" className="h-[250px] w-full relative rounded-3xl overflow-hidden border-customblue border-2">
-                <Image src={'/images/pulselink/large_crowd_film_photo.jpg'} alt="crowd of people" fill className="object-cover opacity-50"/>
-                <div className="absolute top-4 left-4 right-4 z-10">
-                    <SiteHeaderNav />
-                </div>
-                <button 
-                    onClick={() => router.back()}
-                    className="absolute top-4 left-4 text-white hover:text-gray-300 transition-colors z-20"
-                >
-                    <BackArrowIcon className="w-5 h-5" />
-                </button>
-                <div className="absolute bottom-4 left-6 font-crit font-bold text-white opacity-80">
-                    <div className="text-3xl md:text-3xl">PULSELINK</div>
-                    <div className="text-s font-light italic">Indoor Friend-Finding Wearable Device Prototype</div>
-                </div>
-                <a 
-                    href="https://github.com/NPande25/PulseLink" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="absolute bottom-4 right-6 font-crit text-sm italic text-white opacity-80 hover:text-gray-300 transition-colors flex items-center gap-2"
-                >
-                    GitHub
-                    <ExternalLinkIcon className="w-5 h-5" />
-                </a>
-            </div>
+            <ProjectHero 
+                title="PULSELINK"
+                subtitle="Indoor Friend-Finding Wearable Device Prototype"
+                backgroundImage="/images/pulselink/large_crowd_film_photo.jpg"
+                backgroundAlt="crowd of people"
+                borderColor="border-customblue"
+                githubUrl="https://github.com/NPande25/PulseLink"
+            />
 
             <div id="siteBody" className="flex flex-col items-center gap-3 px-4">
                 <div className="flex flex-col w-full max-w-[650px] gap-3">
