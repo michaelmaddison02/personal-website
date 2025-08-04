@@ -5,7 +5,7 @@ import SiteHeaderNav from "@/components/siteHeaderNav"
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import BackArrowIcon from "@/components/icons/BackArrowIcon";
-import ExternalLinkIcon from "@/components/icons/ExternalLinkIcon";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 export default function Page() {
     const router = useRouter();
@@ -27,19 +27,8 @@ export default function Page() {
                     <div className="text-3xl md:text-3xl">ANTHEM</div>
                     <div className="text-s font-light italic">An End-to-End Platform to Discover and Document Live Music</div>
                 </div>
-                {/* <a 
-                    href="https://voxcura.dartmouth.edu/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="absolute bottom-4 right-6 font-crit text-sm italic text-white opacity-80 hover:text-gray-300 transition-colors flex items-center gap-2"
-                >
-                    GitHub
-                    <ExternalLinkIcon className="w-5 h-5" />
-                </a> */}
             </div>
             <div className="p-2">
-                {/* <SiteHeaderNav /> */}
-
                 <div id="siteBody" className="flex flex-col items-center">
                     <div className="flex flex-col gap-4 w-full max-w-[650px]">
 
@@ -76,9 +65,9 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col sm:flex-row px-2 gap-4 justify-center items-center overflow-hidden">
+            <div id="demo-videos" className="flex flex-col sm:flex-row px-2 gap-4 justify-center items-center overflow-hidden">
                 <video 
-                    src="/videos/anthem/Concert_Discovery_Friends_Page.mov"
+                    src="/videos/anthem/Concert_Discovery_Friends_Page.mp4"
                     autoPlay 
                     loop 
                     muted 
@@ -86,7 +75,7 @@ export default function Page() {
                     className="w-[550px] object-contain border-white opacity-90 border-2 rounded-lg"
                 />
                 <video 
-                    src="/videos/anthem/Concert_Discovery_Home_Artist_Event_Pages.mov"
+                    src="/videos/anthem/Concert_Discovery_Home_Artist_Event_Pages.mp4"
                     autoPlay 
                     loop 
                     muted 
@@ -94,7 +83,7 @@ export default function Page() {
                     className="w-[550px] object-contain border-white opacity-90 border-2 rounded-lg"
                 />
                 <video 
-                    src="/videos/anthem/Concert_Discovery_Profile_Page.mov"
+                    src="/videos/anthem/Concert_Discovery_Profile_Page.mp4"
                     autoPlay 
                     loop 
                     muted 
@@ -102,63 +91,125 @@ export default function Page() {
                     className="w-[550px] object-contain border-white opacity-90 border-2 rounded-lg"
                 />
             </div>
-            <div className="p-2">
+            <div className="p-4">
                 <div id="siteBody" className="flex flex-col items-center">
-                    <div className="flex flex-col gap-4 w-full max-w-[650px]">
-                        
-                        <Card color="customwhite">
-                            <div id="challenge-section" className="flex flex-col p-4">
-                                <span className="font-crit font-regular underline text-lg mb-2">FEATURES</span>
-                                
-                                <div id="solution-section" className="flex flex-col gap-8">
-                                    <div className="w-full">
-                                        
-                                        <div className="flex flex-col h-full">             
-                                            <span className="font-crit font-regular font-bold italic text-md mb-1">Home Page</span>
-                                            <span className="font-crit font-regular text-justify text-sm">Siren's home feed presents users with a personalized, infinite scroll of concert tiles featuring upcoming events based on their music preferences and location. Each tile shows artist names, venue details, dates, and visuals for quick browsing. Authenticated users can follow events, access "Events Near You" and "Recommended Artists" sections, and navigate to detailed event pages. The feed uses machine learning to surface both popular concerts and hidden gems through a clean design that hopefully makes discovering live music experiences more fun and effortless.
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="w-full rounded-lg overflow-hidden border-customblue border-2 relative">
-                                        <video 
-                                            src="/videos/anthem/Concert_Discovery_Home_Page.mov"
-                                            autoPlay
-                                            loop
-                                            muted
-                                            className="w-full h-full object-cover"
-                                            preload="metadata"
-                                        >
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
+                    <div id="features-section" className="flex flex-col gap-4 w-full max-w-[650px]">
+                        <Card color="customgreen">
+                            <div className="p-8">
+                                <span id="features-title" className="font-crit font-regular underline text-lg mb-4 block">FEATURES</span>
+                                <Carousel className="w-full max-w-full mx-auto">
+                                    <CarouselContent>
+                                        <CarouselItem id="home-page-feature">
+                                            <div className="flex flex-col justify-between gap-4 h-full">
+                                                <div className="flex flex-col">
+                                                    <span className="font-crit font-regular font-bold italic text-md mb-2">Home Page</span>
+                                                    <span className="font-crit font-regular text-justify text-sm">Anthem's home feed presents users with a personalized, infinite scroll of concert tiles featuring upcoming events based on their music preferences and location. Each tile shows artist names, venue details, dates, and visuals for quick browsing. Authenticated users can follow events, access "Events Near You" and "Recommended Artists" sections, and navigate to detailed event pages. The feed uses machine learning to surface both popular concerts and hidden gems through a clean design that hopefully makes discovering live music experiences more fun and effortless.
+                                                    </span>
+                                                </div>
+                                                <div className="rounded-lg overflow-hidden border-white border-2">
+                                                    <video 
+                                                        src="/videos/anthem/Concert_Discovery_Home_Page.mp4"
+                                                        autoPlay
+                                                        loop
+                                                        muted
+                                                        className="w-full h-full object-cover"
+                                                        preload="metadata"
+                                                    >
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                </div>
+                                            </div>
+                                        </CarouselItem>
+                                        <CarouselItem id="artist-page-feature">
+                                            <div className="flex flex-col justify-between gap-4 h-full">
+                                                <div className="flex flex-col">
+                                                    <span className="font-crit font-regular font-bold italic text-md mb-2">Artist Page</span>
+                                                    <span className="font-crit font-regular text-justify text-sm">The artist page provides a comprehensive hub for exploring live music through a clean tabbed interface. Users can browse upcoming concerts with ticket links, view past performances with detailed setlists, and access artist details including Spotify integration. The page prominently displays artist profile information, while authenticated users can follow artists to receive personalized recommendations and tour updates, making it easy to track and engage with their favorite performers.
+                                                    </span>
+                                                </div>
+                                                <div className="rounded-lg overflow-hidden border-customblue border-2">
+                                                    <video 
+                                                        src="/videos/anthem/Concert_Discovery_Artist_Page.mp4"
+                                                        autoPlay
+                                                        loop
+                                                        muted
+                                                        className="w-full h-full object-cover"
+                                                        preload="metadata"
+                                                    >
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                </div>
+                                            </div>
+                                        </CarouselItem>
+                                        <CarouselItem id="event-page-feature">
+                                            <div className="flex flex-col justify-between gap-4 h-full">
+                                                <div className="flex flex-col">
+                                                    <span className="font-crit font-regular font-bold italic text-md mb-2">Event Page</span>
+                                                    <span className="font-crit font-regular text-justify text-sm">The event page centralizes all concert information through its dynamic tabbed interface. The "Explore" tab serves as the social hub where users can view fan posts about the upcoming show, while the "Tickets" tab integrates TicketMaster links and purchasing options for future events. The "Details" tab displays essential logistics including venue information, date/time, and interactive Mapbox location features. The page header prominently shows event timing, and authenticated users can follow events to receive updates and notifications.
+                                                    </span>
+                                                </div>
+                                                <div className="rounded-lg overflow-hidden border-customblue border-2">
+                                                    <video 
+                                                        src="/videos/anthem/Concert_Discovery_Event_Page.mp4"
+                                                        autoPlay
+                                                        loop
+                                                        muted
+                                                        className="w-full h-full object-cover"
+                                                        preload="metadata"
+                                                    >
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                </div>
+                                            </div>
+                                        </CarouselItem>
+                                        <CarouselItem id="community-page-feature">
+                                            <div className="flex flex-col justify-between gap-4 h-full">
+                                                <div className="flex flex-col">
+                                                    <span className="font-crit font-regular font-bold italic text-md mb-2">Community Page</span>
+                                                    <span className="font-crit font-regular text-justify text-sm">The community page serves as Anthem's social discovery hub where users browse and engage with content from fellow concert-goers. The page features an infinitely scrolling feed displaying users who recently posted concert content, showing profile pictures, names, and interactive concert tiles. Users can click profiles to view individual pages or select concert tiles to see event details and user-generated media like videos. This social discovery mechanism helps users find new concerts by seeing what shows others attend, fostering community engagement and connecting users with similar musical tastes.
+                                                    </span>
+                                                </div>
+                                                <div className="rounded-lg overflow-hidden border-customblue border-2">
+                                                    <video 
+                                                        src="/videos/anthem/Concert_Discovery_Community_Page.mp4"
+                                                        autoPlay
+                                                        loop
+                                                        muted
+                                                        className="w-full h-full object-cover"
+                                                        preload="metadata"
+                                                    >
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                </div>
+                                            </div>
+                                        </CarouselItem>
+                                        <CarouselItem id="profile-page-feature">
+                                            <div className="flex flex-col justify-between gap-4 h-full">
+                                                <div className="flex flex-col">
+                                                    <span className="font-crit font-regular font-bold italic text-md mb-2">Profile Page</span>
+                                                    <span className="font-crit font-regular text-justify text-sm">The User Profile page serves as a personal hub where users showcase their concert identity and manage social connections. The page features a prominent header with profile information, avatar, and social metrics, while the main content uses a tabbed interface to organize concert posts, followed artists, and social connections. Interactive elements include follow buttons and modal windows for viewing follower lists. For profile owners, it functions as a concert diary and networking center, while visitors gain insight into musical tastes and attendance history, fostering community-driven concert discovery.
+                                                    </span>
+                                                </div>
+                                                <div className="rounded-lg overflow-hidden border-customblue border-2">
+                                                    <video 
+                                                        src="/videos/anthem/Concert_Discovery_Profile_Page.mp4"
+                                                        autoPlay
+                                                        loop
+                                                        muted
+                                                        className="w-full h-full object-cover"
+                                                        preload="metadata"
+                                                    >
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                </div>
+                                            </div>
+                                        </CarouselItem>
+                                    </CarouselContent>
+                                    <CarouselPrevious className="bg-customgreen text-white border-customgreen hover:bg-[#20924c] hover:text-white hover:border-customgreen -left-15" />
+                                    <CarouselNext className="bg-customgreen text-white border-customgreen hover:bg-[#20924c] hover:text-white hover:border-customgreen -right-15" />
+                                </Carousel>
                             </div>
                         </Card>
- 
-                       <div id="solution-section" className="flex flex-row gap-3">
-                            <div className="w-3/5">
-                                <Card color="customblue">
-                                    <div className="flex flex-col h-full p-4">             
-                                        <span className="font-crit font-regular underline text-lg mb-2">SOLUTION</span>
-                                        <span className="font-crit font-regular text-justify text-sm">PulseLink is a wearable friend-finding device optimized for crowded indoor environments. Unlike existing products like Totem Compass and Crowd Compass, PulseLink uses a mesh network of devices and anchors to enable precise indoor positioning. Devices communicate with local anchors to determine their location, then broadcast to paired devices, displaying friends' direction and distance on an intuitive LED matrix. User testing confirmed PulseLink significantly improves users' ability to quickly reconnect with friends in crowded spaces.
-                                        </span>
-                                    </div>
-                                </Card>
-                            </div>
-                            <div className="w-2/5 rounded-lg overflow-hidden border-customblue border-2 relative">
-                                <video 
-                                    src="/videos/pulselink/pulselink-initial-prototype (online-video-cutter.com).mp4"
-                                    autoPlay
-                                    loop
-                                    muted
-                                    className="w-full h-full object-cover"
-                                    preload="metadata"
-                                >
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
