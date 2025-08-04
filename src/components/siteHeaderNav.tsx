@@ -2,7 +2,7 @@
 
 import { useRouter, usePathname } from "next/navigation";
 
-export default function siteHeaderNav() {
+export default function SiteHeaderNav() {
     const router = useRouter();
     const pathname = usePathname();
 

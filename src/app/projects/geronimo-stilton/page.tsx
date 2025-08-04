@@ -15,15 +15,9 @@ export default function Page() {
                 githubUrl="https://github.com/NPande25/PulseLink"
             />
             <div className="p-4">
-                {/* <SiteHeaderNav /> */}
 
                 <div id="siteBody" className="flex flex-col items-center">
                     <div className="flex flex-col gap-8 w-full max-w-[650px] px-4">
-                        {/* <div id="projectHeader" className="flex flex-col text-white">
-                            <span className="font-crit font-regular text-xl">GERONIMO STILTON</span>
-                            <span id="geronimoStilton_ShortDescription" className="font-crit font-light italic text-s">Full-stack Creative Coding Project</span>
-                        </div> */}
-
                         <Card color="customorange">
                             <div id="projectDescription" className="flex flex-row gap-8">
                                 <div className="min-w-[130px] flex justify-center items-center">
@@ -79,8 +73,8 @@ export default function Page() {
             </div>
             <div id="siteBody" className="flex flex-col items-center p-4">
                 <div className="flex flex-col gap-8 w-full max-w-[650px] px-4">
-                    <Card id="technology-section" color="customorange">
-                    <div className="flex flex-col">
+                    <Card color="customorange">
+                    <div id="technology-section" className="flex flex-col">
                         <span id="technology-title" className="font-crit font-regular underline text-lg mb-2">TECHNOLOGY</span>
                         
                         <span id="sentiment-analysis" className="font-crit font-regular font-bold italic text-md mb-0.5">Sentiment Analysis</span>
