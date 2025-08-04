@@ -4,6 +4,7 @@ import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { motion } from 'motion/react';
+import { useRouter } from 'next/navigation';
 import GLBModel from '../threejs/GLBModel';
 import Card from '../Card';
 
@@ -13,6 +14,12 @@ interface AnthemPosterProps {
 
 export default function AnthemPoster({ windowWidth }: AnthemPosterProps) {
     const [isHovered, setIsHovered] = React.useState(false);
+
+    const router = useRouter();
+
+    const handleModelClick = () => {
+        router.push('/projects/anthem');
+    };
 
     return (
         <div className="w-screen h-full flex justify-center items-center flex-shrink-0 snap-start">
@@ -29,6 +36,7 @@ export default function AnthemPoster({ windowWidth }: AnthemPosterProps) {
                     <GLBModel 
                         modelPath="/3d-objects/anthem_poster.glb" 
                         onHoverChange={setIsHovered}
+                        onClick={handleModelClick}
                     />
                 </Canvas>
                 

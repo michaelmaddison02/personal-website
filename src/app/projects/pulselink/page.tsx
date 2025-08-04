@@ -11,7 +11,6 @@ export default function Page() {
     const router = useRouter();
     
     return (
-        
         <div className="min-h-screen min-w-screen flex flex-col gap-3">
             <div id="hero-section" className="h-[250px] w-full relative rounded-3xl overflow-hidden border-customblue border-2">
                 <Image src={'/images/pulselink/large_crowd_film_photo.jpg'} alt="crowd of people" fill className="object-cover opacity-50"/>
@@ -106,7 +105,7 @@ export default function Page() {
                         </div>
                         <div className="w-2/5 rounded-lg overflow-hidden border-customblue border-2 relative">
                             <video 
-                                src="/videos/pulselink/pulselink-initial-prototype (online-video-cutter.com).mp4"
+                                src="/videos/pulselink/pulselink-initial-prototype.mp4"
                                 autoPlay
                                 loop
                                 muted
