@@ -1,8 +1,8 @@
 "use client"
 
 import React from 'react';
-import { useLoader, useFrame } from '@react-three/fiber';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { useFrame } from '@react-three/fiber';
+import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
 interface GLBModelProps {
@@ -20,7 +20,7 @@ export default function GLBModel({
     onHoverChange,
     onClick
 }: GLBModelProps) {
-    const gltf = useLoader(GLTFLoader, modelPath);
+    const gltf = useGLTF(modelPath);
     const meshRef = React.useRef<THREE.Group>(null);
     const [isHovered, setIsHovered] = React.useState(false);
     
