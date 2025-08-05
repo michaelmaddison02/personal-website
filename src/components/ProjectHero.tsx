@@ -16,6 +16,7 @@ interface ProjectHeroProps {
   githubUrl?: string;
   linkText?: string;
   rounded?: boolean;
+  posterIndex?: number;
 }
 
 export default function ProjectHero({ 
@@ -26,9 +27,19 @@ export default function ProjectHero({
   borderColor, 
   githubUrl,
   linkText = "GitHub",
-  rounded = true
+  rounded = true,
+  posterIndex
 }: ProjectHeroProps) {
   const router = useRouter();
+
+  const handleBack = () => {
+    if (posterIndex !== undefined) {
+      localStorage.setItem('scrollToPoster', posterIndex.toString());
+      router.push('/projects');
+    } else {
+      router.back();
+    }
+  };
 
   return (
     <div 
@@ -45,7 +56,7 @@ export default function ProjectHero({
         <SiteHeaderNav />
       </div>
       <button 
-        onClick={() => router.back()}
+        onClick={handleBack}
         className="absolute top-4 left-4 text-white hover:text-gray-300 transition-colors z-20"
       >
         <BackArrowIcon className="w-5 h-5" />

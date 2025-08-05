@@ -14,6 +14,7 @@ export default function Page() {
                 backgroundAlt="green blue gradient background"
                 borderColor="border-customgreen"
                 rounded={false}
+                posterIndex={2}
             />
             <div className="p-2">
                 <div id="siteBody" className="flex flex-col items-center">

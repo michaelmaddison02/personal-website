@@ -13,6 +13,7 @@ export default function Page() {
                 backgroundAlt="mouse motif pattern"
                 borderColor="border-customorange"
                 githubUrl="https://github.com/NPande25/PulseLink"
+                posterIndex={0}
             />
             <div className="p-4">
 

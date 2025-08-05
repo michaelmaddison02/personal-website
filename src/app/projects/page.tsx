@@ -51,6 +51,25 @@ export default function Page() {
         }
     }, []);
 
+    // Set initial position based on saved poster index
+    React.useEffect(() => {
+        const savedIndex = localStorage.getItem('scrollToPoster');
+        if (savedIndex) {
+            const index = parseInt(savedIndex);
+            if (index >= 0 && index < totalItems) {
+                // Small delay to ensure container is ready
+                setTimeout(() => {
+                    if (scrollContainerRef.current) {
+                        const scrollPosition = window.innerWidth * index;
+                        scrollContainerRef.current.scrollLeft = scrollPosition;
+                        setCurrentIndex(index);
+                    }
+                }, 100);
+            }
+            localStorage.removeItem('scrollToPoster');
+        }
+    }, []);
+
     
     return (
         <div className="h-screen flex flex-col p-4 relative">

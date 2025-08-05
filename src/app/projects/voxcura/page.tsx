@@ -15,6 +15,7 @@ export default function Page() {
                 githubUrl="https://voxcura.dartmouth.edu/"
                 linkText="View Site"
                 rounded={false}
+                posterIndex={3}
             />
             <div className="p-2">
                 {/* <SiteHeaderNav /> */}
