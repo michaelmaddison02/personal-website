@@ -22,7 +22,7 @@ export default function InfoButton() {
       
       {/* Image container moving up */}
       <motion.div
-        className="absolute bottom-0 right-0 rounded-lg w-48 border-3 border-black z-10 overflow-hidden"
+        className="absolute bottom-0 right-0 rounded-lg w-48 z-10 overflow-hidden"
         style={{ transformOrigin: 'bottom right' }}
         initial={INITIAL_STATE}
         animate={isInfoHovered ? { 
@@ -44,7 +44,7 @@ export default function InfoButton() {
       
       {/* Image container moving left */}
       <motion.div
-        className="absolute bottom-0 right-0 rounded-lg w-48 border-3 border-black z-0 overflow-hidden"
+        className="absolute bottom-0 right-0 rounded-lg w-48 z-0 overflow-hidden"
         style={{ transformOrigin: 'bottom right' }}
         initial={INITIAL_STATE}
         animate={isInfoHovered ? { 
@@ -66,7 +66,7 @@ export default function InfoButton() {
 
       {/* Text container moving diagonally */}
       <motion.div
-        className="absolute bottom-0 right-0 rounded-lg w-48 border-3 border-black z-30"
+        className="absolute bottom-0 right-0 rounded-lg w-48 z-30 overflow-hidden"
         style={{ transformOrigin: 'bottom right' }}
         initial={INITIAL_STATE}
         animate={isInfoHovered ? { 
@@ -77,7 +77,7 @@ export default function InfoButton() {
         } : RESET_STATE}
         transition={ANIMATION_CONFIG}
       >
-        <div className="font-stamp-one text-sm text-white bg-black p-4">This home page, including the aligator icon, attempts to digitize a mural that my close friend Yvonne Chen and I made in college. Inspired by Minna Leunig, we created a wall-to-wall mural of bumpy animals</div>
+        <div className="font-stamp-one text-sm text-white bg-black/70 backdrop-blur-md p-4">This home page, including the aligator icon, attempts to digitize a mural that my close friend Yvonne Chen and I made in college. Inspired by Minna Leunig, we created a wall-to-wall mural of bumpy animals</div>
       </motion.div>
       
       {/* InfoIcon */}

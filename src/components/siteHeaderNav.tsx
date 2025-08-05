@@ -1,7 +1,17 @@
 "use client"
 
 import { useRouter, usePathname } from "next/navigation";
-
+import {
+    Dialog,
+    DialogClose,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+  } from "@/components/ui/dialog"
+  
 export default function SiteHeaderNav() {
     const router = useRouter();
     const pathname = usePathname();
@@ -32,6 +42,7 @@ export default function SiteHeaderNav() {
             >
                 PROJECTS
             </button>
+
             <button 
                 className={buttonClass}
                 onClick={() => handleNavigation('/info')}
