@@ -18,8 +18,6 @@ export default function Page() {
                 posterIndex={3}
             />
             <div className="p-2">
-                {/* <SiteHeaderNav /> */}
-
                 <div id="siteBody" className="flex flex-col items-center">
                     <div className="flex flex-col gap-4 w-full max-w-[650px]">
 
@@ -103,10 +101,6 @@ export default function Page() {
                                     </div>
                                 </Card>
                             </div>
-                            {/* <div className="w-2/5 rounded-lg overflow-hidden border-white border-2 relative">
-                                <Image src={'/images/Film-Burn-8.jpg'} alt="decorative texture" fill className="object-cover"/>
-                            </div> */}
-                            
                         </div>
 
                         <Card color="customwhite">

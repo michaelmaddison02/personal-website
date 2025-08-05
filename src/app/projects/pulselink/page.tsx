@@ -16,7 +16,6 @@ export default function Page() {
                 githubUrl="https://github.com/NPande25/PulseLink"
                 posterIndex={1}
             />
-
             <div id="siteBody" className="flex flex-col items-center gap-3 px-4">
                 <div className="flex flex-col w-full max-w-[650px] gap-3">
                     

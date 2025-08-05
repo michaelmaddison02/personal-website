@@ -1,11 +1,11 @@
 "use client"
-import SiteHeaderNav from "../../components/SiteHeaderNav"
+import SiteHeaderNav from "@/components/SiteHeaderNav"
 
 import React from 'react';
-import GeronimoPoster from '../../components/projects/GeronimoPoster';
-import PulseLinkPoster from '../../components/projects/PulseLinkPoster';
-import AnthemPoster from '../../components/projects/AnthemPoster';
-import VoxcuraPoster from '../../components/projects/VoxcuraPoster';
+import GeronimoPoster from '@/components/projects/GeronimoPoster';
+import PulseLinkPoster from '@/components/projects/PulseLinkPoster';
+import AnthemPoster from '@/components/projects/AnthemPoster';
+import VoxcuraPoster from '@/components/projects/VoxcuraPoster';
 
 export default function Page() {
     const [currentIndex, setCurrentIndex] = React.useState(0);

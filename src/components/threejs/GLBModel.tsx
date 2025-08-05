@@ -70,3 +70,9 @@ export default function GLBModel({
         </group>
     );
 }
+
+// Preload all poster models
+useGLTF.preload('/3d-objects/geronimo_poster.glb');
+useGLTF.preload('/3d-objects/pulselink_poster.glb');
+useGLTF.preload('/3d-objects/anthem_poster.glb');
+useGLTF.preload('/3d-objects/voxcura_poster.glb');
