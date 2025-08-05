@@ -79,7 +79,7 @@ export default function Page() {
             {currentIndex > 0 && (
                 <button 
                     onClick={handlePrevious}
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 p-3 transition-all duration-200 hover:opacity-80"
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 p-3 transition-all duration-200 hover:opacity-80 z-30"
                 >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -91,7 +91,7 @@ export default function Page() {
             {currentIndex < totalItems - 1 && (
                 <button 
                     onClick={handleNext}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 p-3 transition-all duration-200 hover:opacity-80"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 p-3 transition-all duration-200 hover:opacity-80 z-30"
                 >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 18L15 12L9 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

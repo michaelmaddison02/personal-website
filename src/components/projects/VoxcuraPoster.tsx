@@ -18,7 +18,7 @@ export default function VoxcuraPoster() {
 
     return (
         <div className="w-screen h-full flex justify-center items-center flex-shrink-0 snap-start">
-            <div className="relative max-w-[475px] w-full h-full">
+            <div className="relative max-w-[475px] w-full h-[70vh] sm:h-full">
                 <Canvas camera={{ position: [0, 14, 0], fov: 90 }}>
                     <OrbitControls 
                         enableZoom={false} 
@@ -37,7 +37,7 @@ export default function VoxcuraPoster() {
                 
                 {/* Animated Cards */}
                 <motion.div
-                    className="absolute top-1/5 -translate-y-1/2 -left-20 z-10"
+                    className="hidden sm:block absolute top-1/5 -translate-y-1/2 -left-20 z-10"
                     initial={{ x: 0, opacity: 0 }}
                     animate={{
                         x: isHovered ? -75 : 0,
@@ -60,7 +60,7 @@ export default function VoxcuraPoster() {
                 </motion.div>
 
                 <motion.div
-                    className="absolute top-2/5 -translate-y-1/2 -left-20 z-10"
+                    className="hidden sm:block absolute top-2/5 -translate-y-1/2 -left-20 z-10"
                     initial={{ x: 0, opacity: 0 }}
                     animate={{
                         x: isHovered ? -40 : 0,
@@ -76,7 +76,7 @@ export default function VoxcuraPoster() {
                 </motion.div>
                 
                 <motion.div
-                    className="absolute top-2/5 -translate-y-1/2 -right-14 z-10"
+                    className="hidden sm:block absolute top-2/5 -translate-y-1/2 -right-14 z-10"
                     initial={{ x: 0, opacity: 0 }}
                     animate={{
                         x: isHovered ? 95 : 0,
@@ -96,7 +96,7 @@ export default function VoxcuraPoster() {
                 </motion.div>
 
                 <motion.div
-                    className="absolute top-3/4 -translate-y-1/2 -right-18 z-10"
+                    className="hidden sm:block absolute top-3/4 -translate-y-1/2 -right-18 z-10"
                     initial={{ x: 0, opacity: 0 }}
                     animate={{
                         x: isHovered ? 130 : 0,

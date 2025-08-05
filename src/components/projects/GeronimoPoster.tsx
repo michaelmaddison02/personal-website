@@ -18,7 +18,7 @@ export default function GeronimoPoster() {
 
     return (
         <div className="w-full h-full flex justify-center items-center flex-shrink-0 snap-start">
-            <div className="relative max-w-[475px] w-full h-full">
+            <div className="relative max-w-[475px] w-full h-[70vh] sm:h-full">
                 <Canvas camera={{ position: [0, 14, 0], fov: 90 }}>
                     <OrbitControls 
                         enableZoom={false} 
@@ -37,7 +37,7 @@ export default function GeronimoPoster() {
                 
                 {/* Animated Cards */}
                 <motion.div
-                    className="absolute top-1/4 -translate-y-1/2 -left-16 z-10"
+                    className="hidden sm:block absolute top-1/4 -translate-y-1/2 -left-16 z-10"
                     initial={{ x: 0, opacity: 0 }}
                     animate={{
                         x: isHovered ? -80 : 0,
@@ -62,7 +62,7 @@ export default function GeronimoPoster() {
                 </motion.div>
                 
                 <motion.div
-                    className="absolute top-3/4 -translate-y-1/2 -right-16 z-10"
+                    className="hidden sm:block absolute top-3/4 -translate-y-1/2 -right-16 z-10"
                     initial={{ x: 0, opacity: 0 }}
                     animate={{
                         x: isHovered ? 105 : 0,
