@@ -1,17 +1,8 @@
 "use client"
 
 import { useRouter, usePathname } from "next/navigation";
-import {
-    Dialog,
-    DialogClose,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-  } from "@/components/ui/dialog"
-  
+import InfoButton from "@/components/InfoButton";
+
 export default function SiteHeaderNav() {
     const router = useRouter();
     const pathname = usePathname();
@@ -43,12 +34,7 @@ export default function SiteHeaderNav() {
                 PROJECTS
             </button>
 
-            <button 
-                className={buttonClass}
-                onClick={() => handleNavigation('/info')}
-            >
-                INFO
-            </button>
+            <InfoButton className={buttonClass}/>
         </div>
     );
 

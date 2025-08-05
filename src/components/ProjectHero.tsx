@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import SiteHeaderNav from "@/components/siteHeaderNav";
+import SiteHeaderNav from "@/components/SiteHeaderNav";
 import BackArrowIcon from "@/components/icons/BackArrowIcon";
 import ExternalLinkIcon from "@/components/icons/ExternalLinkIcon";
 

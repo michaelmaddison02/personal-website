@@ -1,5 +1,5 @@
 "use client"
-import SiteHeaderNav from "../../components/siteHeaderNav"
+import SiteHeaderNav from "../../components/SiteHeaderNav"
 
 import React from 'react';
 import GeronimoPoster from '../../components/projects/GeronimoPoster';

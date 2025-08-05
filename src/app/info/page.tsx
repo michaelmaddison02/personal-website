@@ -1,4 +1,4 @@
-import SiteHeaderNav from "@/components/siteHeaderNav"
+import SiteHeaderNav from "@/components/SiteHeaderNav"
 
 export default function Page() {
     return (

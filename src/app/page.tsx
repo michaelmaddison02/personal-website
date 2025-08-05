@@ -1,8 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import SiteHeaderNav from '@/components/siteHeaderNav';
-import InfoButton from '@/components/InfoButton';
+import SiteHeaderNav from '@/components/SiteHeaderNav';
+import AnimatedInfoIcon from '@/components/AnimatedInfoIcon';
 
 export default function Home() {
 
@@ -21,7 +21,7 @@ export default function Home() {
             </div>
           </div>      
         </div>
-        <InfoButton />
+        <AnimatedInfoIcon />
       </div>
     </div>
   );
