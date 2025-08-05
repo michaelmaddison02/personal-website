@@ -1,10 +1,8 @@
 // This Info button is used in siteHeaderNav.tsx
 import {
     Dialog,
-    DialogClose,
     DialogContent,
     DialogDescription,
-    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
