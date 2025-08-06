@@ -6,9 +6,11 @@ import GeronimoPoster from '@/components/projects/GeronimoPoster';
 import PulseLinkPoster from '@/components/projects/PulseLinkPoster';
 import AnthemPoster from '@/components/projects/AnthemPoster';
 import VoxcuraPoster from '@/components/projects/VoxcuraPoster';
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 export default function Page() {
     const [currentIndex, setCurrentIndex] = React.useState(0);
+    const [isMobile, setIsMobile] = React.useState(false);
     const scrollContainerRef = React.useRef<HTMLDivElement>(null);
     const totalItems = 4; // We have 3 canvas items
     
@@ -35,6 +37,17 @@ export default function Page() {
         }
     };
     
+    React.useEffect(() => {
+        const checkScreenWidth = () => {
+            setIsMobile(window.innerWidth < 540);
+        };
+        
+        checkScreenWidth();
+        window.addEventListener('resize', checkScreenWidth);
+        
+        return () => window.removeEventListener('resize', checkScreenWidth);
+    }, []);
+
     React.useEffect(() => {
         const handleScroll = () => {
             if (scrollContainerRef.current) {
@@ -70,47 +83,76 @@ export default function Page() {
         }
     }, []);
 
+
     
     return (
         <div className="h-screen flex flex-col p-4 relative">
             <SiteHeaderNav />
             
-            {/* Previous Arrow */}
-            {currentIndex > 0 && (
-                <button 
-                    onClick={handlePrevious}
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 p-3 transition-all duration-200 hover:opacity-80 z-30"
-                >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                </button>
+            {/* Desktop version with custom navigation */}
+            {!isMobile && (
+                <>
+                    {/* Previous Arrow */}
+                    {currentIndex > 0 && (
+                        <button 
+                            onClick={handlePrevious}
+                            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 p-3 transition-all duration-200 hover:opacity-80 z-30"
+                        >
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                        </button>
+                    )}
+                    
+                    {/* Next Arrow */}
+                    {currentIndex < totalItems - 1 && (
+                        <button 
+                            onClick={handleNext}
+                            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 p-3 transition-all duration-200 hover:opacity-80 z-30"
+                        >
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18L15 12L9 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                        </button>
+                    )}
+                    
+                    <div 
+                        ref={scrollContainerRef}
+                        className="overflow-x-scroll flex-1 snap-x snap-mandatory" 
+                        style={{scrollbarWidth: 'none', msOverflowStyle: 'none', scrollBehavior: 'smooth'}}
+                    >
+                        <div className="flex h-full">
+                            <GeronimoPoster/>
+                            <PulseLinkPoster/>
+                            <AnthemPoster/>
+                            <VoxcuraPoster/>
+                        </div>
+                    </div>
+                </>
             )}
             
-            {/* Next Arrow */}
-            {currentIndex < totalItems - 1 && (
-                <button 
-                    onClick={handleNext}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 p-3 transition-all duration-200 hover:opacity-80 z-30"
-                >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 18L15 12L9 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                </button>
+            {/* Mobile version with carousel */}
+            {isMobile && (
+                <Carousel className="flex-1 flex items-center">
+                    <CarouselContent className="h-full">
+                        <CarouselItem className="h-full flex items-center justify-center">
+                            <GeronimoPoster/>
+                        </CarouselItem>
+                        <CarouselItem className="h-full flex items-center justify-center">
+                            <PulseLinkPoster/>
+                        </CarouselItem>
+                        <CarouselItem className="h-full flex items-center justify-center">
+                            <AnthemPoster/>
+                        </CarouselItem>
+                        <CarouselItem className="h-full flex items-center justify-center">
+                            <VoxcuraPoster/>
+                        </CarouselItem>
+                    </CarouselContent>
+                    <CarouselPrevious className="bg-white/30 text-white border-none hover:bg-white/50 hover:text-white hover:border-none -left-2 -translate-y-10" />
+                    <CarouselNext className="bg-white/30 text-white border-none hover:bg-white/50 hover:text-white hover:border-none -right-2 -translate-y-10" />
+                </Carousel>
             )}
             
-            <div 
-                ref={scrollContainerRef}
-                className="overflow-x-scroll flex-1 snap-x snap-mandatory" 
-                style={{scrollbarWidth: 'none', msOverflowStyle: 'none', scrollBehavior: 'smooth'}}
-            >
-                <div className="flex h-full">
-                    <GeronimoPoster/>
-                    <PulseLinkPoster/>
-                    <AnthemPoster/>
-                    <VoxcuraPoster/>
-                </div>
-            </div>
         </div>
     );
 }

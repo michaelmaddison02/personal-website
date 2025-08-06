@@ -3,11 +3,13 @@ import {
     Dialog,
     DialogContent,
     DialogDescription,
+    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
   } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
+import ExternalLinkIcon from "@/components/icons/ExternalLinkIcon";
 
 type InfoButtonStyle = {
     className?: string;
@@ -16,6 +18,14 @@ type InfoButtonStyle = {
 const skills = ["Python", "Java", "C", "SQL", "SAIL", "Bash", "Javascript", "Typescript", "React", "React Native", "Next.js", "CSS", "Node.js", "FastAPI", "Backend", "RTK Query", "API development", "REST APIs", "PostgreSQL", "Supabase", "MongoDB", "Git", "Jenkins", "Prometheus", "TRex", "Docker", "Google Cloud", "Agile", "Scrum", "Kanban"];
 
 export default function InfoButton({ className = '' }: InfoButtonStyle) {
+    const handleEmailClick = async () => {
+        try {
+            await navigator.clipboard.writeText('michael.maddison02@gmail.com');
+        } catch (err) {
+            console.error('Failed to copy email: ', err);
+        }
+    };
+
     return (
         <Dialog>
             <DialogTrigger asChild className={className}>
@@ -34,6 +44,33 @@ export default function InfoButton({ className = '' }: InfoButtonStyle) {
                         <Badge key={index} variant={"secondary"}>{item}</Badge>
                     ))}
                 </DialogDescription>
+
+                <DialogDescription className="flex flex-row items-start gap-4">
+                    <a 
+                        href="https://www.linkedin.com/in/michael-maddison/"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="font-crit text-white opacity-80 hover:text-gray-300 transition-colors flex items-center gap-1"
+                        >
+                        LinkedIn
+                        <ExternalLinkIcon className="w-4 h-4" />
+                    </a>
+                    <a 
+                        href="https://github.com/michaelmaddison02"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="font-crit text-white opacity-80 hover:text-gray-300 transition-colors flex items-center gap-1"
+                        >
+                        Github
+                        <ExternalLinkIcon className="w-4 h-4" />
+                    </a>
+                    <button 
+                        onClick={handleEmailClick}
+                        className="font-crit text-white opacity-80 hover:text-gray-300 transition-colors flex items-center gap-1 focus:outline-none focus:ring-0"
+                        >
+                        Email: Michael.Maddison02@gmail.com
+                    </button>
+                </DialogDescription>                
             </DialogContent>
         
         </Dialog>

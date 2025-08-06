@@ -79,7 +79,7 @@ export default function GeronimoPoster() {
                 </motion.div>
 
                 <motion.div
-                    className="absolute top-2/4 -translate-y-1/2 -right-16 z-10"
+                    className="hidden sm:block absolute top-2/4 -translate-y-1/2 -right-16 z-10"
                     initial={{ x: -40, opacity: 0 }}
                     animate={{
                         x: isHovered ? 40 : -40,
