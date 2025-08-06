@@ -35,7 +35,7 @@ export default function InfoButton({ className = '' }: InfoButtonStyle) {
             <DialogContent className="bg-black/50 border-none font-crit text-white backdrop-blur-md">
                 <DialogHeader>
                     <DialogTitle className="pb-2">{"Hi, I'm Michael Maddison"}</DialogTitle>
-                    <DialogDescription className="pb-2 font-crit text-white">
+                    <DialogDescription className="flex pb-2 font-crit text-white">
                         {"I'm a software engineer, currently focusing on full-stack development, who is passionate about building impactful digital experiences. I love exploring the intersection of technology and user experience, always asking: how can we make systems that both feel frictionless and perform elegantly?"}
                     </DialogDescription>
                 </DialogHeader>
@@ -45,32 +45,34 @@ export default function InfoButton({ className = '' }: InfoButtonStyle) {
                     ))}
                 </DialogDescription>
 
-                <DialogDescription className="flex flex-row items-start gap-4">
-                    <a 
-                        href="https://www.linkedin.com/in/michael-maddison/"
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="font-crit text-white opacity-80 hover:text-gray-300 transition-colors flex items-center gap-1"
-                        >
-                        LinkedIn
-                        <ExternalLinkIcon className="w-4 h-4" />
-                    </a>
-                    <a 
-                        href="https://github.com/michaelmaddison02"
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="font-crit text-white opacity-80 hover:text-gray-300 transition-colors flex items-center gap-1"
-                        >
-                        Github
-                        <ExternalLinkIcon className="w-4 h-4" />
-                    </a>
+                <DialogDescription className="flex flex-col sm:flex-row sm: justify-between items-start gap-2">
+                    <div className="flex flex-row items-start gap-4">
+                        <a 
+                            href="https://www.linkedin.com/in/michael-maddison/"
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="font-crit text-white opacity-80 hover:text-gray-300 transition-colors flex items-center gap-1"
+                            >
+                            LinkedIn
+                            <ExternalLinkIcon className="w-4 h-4" />
+                        </a>
+                        <a 
+                            href="https://github.com/michaelmaddison02"
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="font-crit text-white opacity-80 hover:text-gray-300 transition-colors flex items-center gap-1"
+                            >
+                            Github
+                            <ExternalLinkIcon className="w-4 h-4" />
+                        </a>
+                    </div>
                     <button 
                         onClick={handleEmailClick}
                         className="font-crit text-white opacity-80 hover:text-gray-300 transition-colors flex items-center gap-1 focus:outline-none focus:ring-0"
                         >
-                        Email: Michael.Maddison02@gmail.com
+                        Michael.Maddison02@gmail.com
                     </button>
-                </DialogDescription>                
+                </DialogDescription>
             </DialogContent>
         
         </Dialog>
