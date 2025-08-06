@@ -19,7 +19,7 @@ Hi, I'm Michael Maddison - a software engineer currently focusing on full-stack 
 
 ## 3D Poster Creation
 
-I extended 3D poster frame models from [this Blender Stack Exchange post](https://blender.stackexchange.com/questions/148088/trying-to-rig-a-map), applied each project's poster image as a texture material, and exported them as optimized GLB files. These 3D models are then loaded into the website using Three.js and React Three Fiber, with added interactive behaviors like hover scaling and automatic pulsing animations.
+I extended 3D poster frame models from [this Blender Stack Exchange post](https://blender.stackexchange.com/questions/148088/trying-to-rig-a-map), applied each project's poster image as a texture material, and exported them as optimized GLB files. These 3D models are then loaded into the website using Three.js and React Three Fiber, with added interactive behaviors like hover scaling and automatic pulsing animations. ([glb.ee](https://glb.ee/) is a great site for viewing GLB files!)
 
 ## Background Shader System
 
