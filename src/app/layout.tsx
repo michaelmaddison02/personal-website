@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import BackgroundCanvas from '@/components/threejs/BackgroundCanvas';
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -223,6 +224,7 @@ export default function RootLayout({
       >
         <BackgroundCanvas />
         {children}
+        <Analytics/>
       </body>
     </html>
   );
