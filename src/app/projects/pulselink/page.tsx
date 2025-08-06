@@ -14,6 +14,7 @@ export default function Page() {
                 backgroundAlt="crowd of people"
                 borderColor="border-customblue"
                 githubUrl="https://github.com/NPande25/PulseLink"
+                rounded={false}
                 posterIndex={1}
             />
             <div id="siteBody" className="flex flex-col items-center gap-3 px-4">
