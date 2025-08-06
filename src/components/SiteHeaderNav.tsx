@@ -1,7 +1,7 @@
 "use client"
 
 import { useRouter, usePathname } from "next/navigation";
-import InfoButton from "@/components/InfoButton";
+import InfoButton from "@/components/InfoModal";
 
 export default function SiteHeaderNav() {
     const router = useRouter();

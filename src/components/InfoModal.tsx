@@ -40,7 +40,7 @@ export default function InfoButton({ className = '' }: InfoButtonStyle) {
                     <DialogHeader>
                         <DialogTitle className="text-start pb-2">{"Hi, I'm Michael Maddison"}</DialogTitle>
                         <DialogDescription className="flex text-start font-crit text-white pb-2">
-                            {"I'm a software engineer, currently focusing on full-stack development, who is passionate about building impactful digital experiences. I love exploring the intersection of technology and user experience, always asking: how can we make systems that both feel frictionless and perform elegantly?"}
+                            {"I'm a software engineer, currently focusing on full-stack development, who is passionate about building impactful digital experiences. I love exploring the intersection of technology and user experience, always asking: How can we make systems that both feel frictionless and perform elegantly?"}
                         </DialogDescription>
                     </DialogHeader>
 

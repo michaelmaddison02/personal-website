@@ -45,7 +45,7 @@ export default function GLBModel({
             }
             
             // Trigger pulse every 3 seconds if not hovered
-            if (!isHovered && currentTime - lastPulseTime.current > 3) {
+            if (!isHovered && currentTime - lastPulseTime.current > 6) {
                 lastPulseTime.current = currentTime;
                 setIsPulsing(true);
                 setTimeout(() => setIsPulsing(false), 600); // Pulse duration
