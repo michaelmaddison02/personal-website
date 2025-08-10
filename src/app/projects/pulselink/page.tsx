@@ -90,6 +90,7 @@ export default function Page() {
                                 autoPlay
                                 loop
                                 muted
+                                playsInline
                                 className="w-full h-full object-cover"
                                 preload="metadata"
                             >

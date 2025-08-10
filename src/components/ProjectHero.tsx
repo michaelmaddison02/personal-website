@@ -63,7 +63,7 @@ export default function ProjectHero({
       </button>
       <div className="absolute bottom-4 left-6 font-crit font-bold text-white opacity-80">
         <div className="text-3xl md:text-3xl">{title}</div>
-        <div className="text-s font-light italic">{subtitle}</div>
+        <div className="max-w-[200px] sm:max-w-full text-s font-light italic">{subtitle}</div>
       </div>
       {githubUrl && (
         <a 
